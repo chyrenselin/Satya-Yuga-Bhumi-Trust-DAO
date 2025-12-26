@@ -1,0 +1,102 @@
+/* --- Card Base Styles --- */
+
+/* Styles for the "Pillar" cards, which describe the core tenets of the trust. */
+.pillar-card {
+    /* Semi-transparent dark background. */
+    background: rgba(20, 20, 20, 0.6); 
+    /* Subtle border with a hint of gold, semi-transparent. */
+    border: 1px solid rgba(255, 215, 0, 0.1);
+    /* Generous padding inside the card. */
+    padding: 2.5rem 1.5rem;
+    /* Rounded corners for a softer look. */
+    border-radius: 16px;
+    text-align: center; /* Centers the content within the card. */
+    /* Smooth transition for all property changes, especially for hover effects. */
+    transition: all 0.4s ease;
+    position: relative; /* Establishes a positioning context for pseudo-elements or child elements. */
+    overflow: hidden; /* Hides any content that might overflow the card's boundaries. */
+    /* Applies a blur effect to the content behind the card, creating a frosted glass look. */
+    backdrop-filter: blur(10px);
+}
+
+/* Hover state for the pillar cards. */
+.pillar-card:hover {
+    transform: translateY(-10px); /* Lifts the card up slightly for a 3D effect. */
+    border-color: rgba(255, 215, 0, 0.3); /* Makes the border more prominent and golden. */
+    box-shadow: 0 20px 40px rgba(0,0,0,0.6); /* Adds a stronger shadow to enhance the lifting effect. */
+}
+
+/* Styles for the "Philosophy" cards, which link to foundational documents. */
+.philosophy-card {
+    text-align: center;
+    /* A very subtle, almost invisible border. */
+    border: 1px solid rgba(255,255,255,0.05);
+    /* A subtle gradient from a transparent white to fully transparent. */
+    background: linear-gradient(180deg, rgba(255,255,255,0.02) 0%, transparent 100%);
+    border-radius: 20px; /* More rounded corners than the pillar cards. */
+    transition: 0.4s; /* Smooth transition for hover effects. */
+    overflow: hidden; 
+}
+
+/* A wrapper to make the entire card a clickable link. */
+.card-link-wrapper {
+    display: block; /* Makes the anchor tag a block-level element to fill the card. */
+    width: 100%;
+    height: 100%;
+    text-decoration: none; /* Removes the default underline from the link. */
+    color: inherit; /* Ensures the text inside inherits its color, not the default link color. */
+    padding: 3rem; /* Padding is applied here to ensure the whole area is clickable. */
+}
+
+/* Hover state for the philosophy cards. */
+.philosophy-card:hover {
+    border-color: rgba(191, 149, 63, 0.3); /* Changes the border to a more visible gold. */
+    /* Changes the background to have a subtle gold tint. */
+    background: linear-gradient(180deg, rgba(191, 149, 63, 0.05) 0%, transparent 100%);
+}
+
+/* --- Icon Styles within Cards --- */
+/* Styles for the circular container around the icons. */
+.icon-orb {
+    width: 4.5rem; 
+    height: 4.5rem;
+    margin: 0 auto; /* Centers the orb horizontally. */
+    display: flex; /* Enables flexbox for easy centering of the icon inside. */
+    align-items: center; 
+    justify-content: center;
+    /* Creates a soft radial glow effect behind the icon. */
+    background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
+    border-radius: 50%; /* Makes the container a perfect circle. */
+    transition: 0.4s;
+    border: 1px solid rgba(255, 215, 0, 0.05);
+}
+
+/* Hover effect for the icon orb when its parent pillar card is hovered. */
+.pillar-card:hover .icon-orb {
+    transform: scale(1.1); /* Slightly enlarges the orb. */
+    /* Intensifies the background glow. */
+    background: radial-gradient(circle, rgba(255, 215, 0, 0.2) 0%, transparent 60%);
+    /* Makes the border more visible. */
+    border-color: rgba(255, 215, 0, 0.3);
+    /* Adds a box shadow to create an outer glow. */
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
+}
+
+/* Styles specifically for filled SVG icons. */
+.filled-icon {
+    width: 2.5rem; 
+    height: 2.5rem;
+    color: #ffd700; /* Solid gold color for the icon. */
+    /* Adds a drop shadow to create a glowing effect directly on the icon shape. */
+    filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.6));
+    transition: all 0.3s ease-in-out;
+}
+
+/* Styles for SVG icons that are NOT filled (i.e., stroke-based icons). */
+.icon-svg:not(.filled-icon) {
+    width: 2.5rem; 
+    height: 2.5rem;
+    color: #BF953F; /* A darker gold color for the icon strokes. */
+    /* A slightly more subtle drop shadow glow. */
+    filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.5));
+}

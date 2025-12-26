@@ -1,0 +1,109 @@
+/* --- Translator Widget Container & Button Styles (Root Section) --- */
+
+/* Main container for all translation-related controls. */
+#translator-container { 
+    width: 100%; 
+    max-width: 56rem; 
+    margin-left: auto; /* Centers the container. */
+    margin-right: auto; 
+    padding-left: 1.5rem; 
+    padding-right: 1.5rem; 
+    margin-bottom: 2rem; /* Space below the container. */
+}
+
+/* Groups the trigger button and the Google Translate widget itself. */
+.translate-pair { 
+    display: flex; 
+    flex-direction: column; /* Stacks items vertically. */
+    align-items: center; /* Centers items horizontally. */
+    justify-content: center; 
+    gap: 1rem; /* Space between the button and the widget. */
+}
+
+/* Styles for the button that toggles the translation widget. */
+.translate-button { 
+    display: inline-flex; 
+    align-items: center; 
+    justify-content: center; 
+    gap: 0.75rem; 
+    padding: 0.75rem 1.5rem; 
+    font-weight: 600; 
+    font-size: 0.875rem; 
+    color: var(--color-text); /* Uses the text color variable from root.css. */
+    background: rgba(255, 255, 255, 0.5); /* Semi-transparent white background. */
+    backdrop-filter: blur(10px); /* Frosted glass effect. */
+    -webkit-backdrop-filter: blur(10px); /* For Safari compatibility. */
+    border: 1px solid var(--color-border); /* Uses the border color variable. */
+    border-radius: 0.5rem; 
+    transition: all 0.3s ease-in-out; 
+    text-align: center; 
+}
+
+/* Hover state for the translate button. */
+.translate-button:hover { 
+    background: rgba(255, 255, 255, 0.8); /* Becomes more opaque on hover. */
+    border-color: var(--color-primary); /* Uses the primary color for the border. */
+    color: var(--color-text); 
+}
+
+/* Disabled state for the translate button. */
+.translate-button:disabled { 
+    cursor: not-allowed; 
+    opacity: 0.6; 
+}
+
+/* --- Google Translate Widget Override Styles (Root Section) --- */
+
+/* Styles for the main container injected by Google Translate. */
+#google_translate_element { 
+    display: flex; 
+    align-items: center; 
+    gap: 0.5rem; 
+    padding: 0.5rem; 
+    background: rgba(255, 255, 255, 0.5); 
+    backdrop-filter: blur(12px); 
+    -webkit-backdrop-filter: blur(12px); 
+    border: 1px solid var(--color-border); 
+    border-radius: 0.5rem; 
+}
+
+/* Overrides the styles of the language dropdown menu from Google. */
+/* '!important' is necessary to force these styles over Google's default inline styles. */
+#google_translate_element select.goog-te-combo { 
+    background-color: var(--color-background) !important; /* Uses the site's background color. */
+    border: 1px solid var(--color-border) !important; 
+    color: var(--color-text) !important; 
+    padding: 0.5rem 0.75rem !important; 
+    border-radius: 0.375rem !important; 
+    font-family: 'Inter', sans-serif !important; 
+    font-size: 0.875rem !important; 
+    transition: all 0.2s ease-in-out !important; 
+    -webkit-appearance: none; /* Removes default system appearance for the dropdown arrow. */
+    -moz-appearance: none; 
+    appearance: none; 
+    /* Custom dropdown arrow using an inlined SVG, styled with an orange stroke color (#FF9933). */
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%23FF9933' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e") !important; 
+    background-position: right 0.5rem center !important; 
+    background-repeat: no-repeat !important; 
+    background-size: 1.5em 1.5em !important; 
+    padding-right: 2.5rem !important; /* Adds padding to prevent text from overlapping the custom arrow. */
+}
+
+/* Focus state for the dropdown menu, adds an orange glow. */
+#google_translate_element select.goog-te-combo:focus { 
+    outline: none !important; 
+    border-color: var(--color-primary) !important; 
+    box-shadow: 0 0 15px rgba(255, 153, 51, 0.2) !important; 
+}
+
+/* Overrides the default Google Translate icon with a custom one. */
+.goog-te-gadget-icon { 
+    background-image: url('../../images/glogo.png') !important; 
+    background-position: center !important; 
+    background-repeat: no-repeat !important; 
+    background-size: contain !important; 
+    display: inline-block !important; 
+    width: 28px !important; 
+    height: 28px !important; 
+    vertical-align: middle !important; 
+}

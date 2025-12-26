@@ -1,0 +1,218 @@
+/* --- Base Typography & Colors --- */
+
+/* Sets the base font for all h1, h2, and h3 headings to a serif font for a more formal look. */
+h1, h2, h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    line-height: 1.1;
+}
+
+/* This class creates a 'gold text' effect by using a gradient as a background and then clipping that background to the text itself. */
+.text-gold-gradient, .gold-link {
+    /* A complex linear gradient to simulate a metallic gold texture. */
+    background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+    /* Clips the background to the shape of the text. */
+    -webkit-background-clip: text;
+    background-clip: text;
+    /* Makes the text color transparent, so the background gradient shows through. */
+    color: transparent;
+    /* Adds a subtle glow effect behind the text. */
+    text-shadow: 0 0 30px rgba(255, 215, 0, 0.2); 
+}
+
+/* Specific styles for links that should have the gold gradient effect. */
+.gold-link {
+    text-decoration: underline; /* Adds an underline. */
+    text-decoration-color: rgba(191, 149, 63, 0.5); /* Makes the underline a semi-transparent gold. */
+    cursor: pointer;
+    transition: 0.3s;
+}
+/* Intensifies the glow on hover for better user feedback. */
+.gold-link:hover {
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+}
+
+/* --- Hero Section Typography --- */
+.main-title {
+    /* Responsive font size: minimum of 3rem, scales with 10% of viewport width, maximum of 7rem. */
+    font-size: clamp(3rem, 10vw, 7rem);
+    letter-spacing: -0.02em; /* Tightens the letter spacing slightly. */
+    color: #fff;
+    /* A multi-layered text shadow to create a strong, soft glow effect. */
+    text-shadow: 
+        0 0 10px rgba(255, 255, 255, 0.6), 
+        0 0 20px rgba(255, 255, 255, 0.3),
+        0 0 40px rgba(255, 255, 255, 0.2);
+    line-height: 1;
+}
+
+.hero-text {
+    font-family: 'Cormorant Garamond', serif;
+    /* Responsive font size for the hero paragraph. */
+    font-size: clamp(1.1rem, 4vw, 1.8rem);
+    color: rgba(255, 255, 255, 0.8); /* Slightly transparent white text. */
+    max-width: 800px;
+    font-style: italic;
+    line-height: 1.6;
+    padding: 0 1rem;
+}
+/* Helper class to make specific text within the hero paragraph stand out. */
+.highlight-text {
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255,255,255,0.3);
+}
+
+/* --- General Section Typography --- */
+.section-title {
+    font-size: 2rem;
+    letter-spacing: 0.2em; /* Wide letter spacing for a stylized look. */
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5); /* Faded white color. */
+    margin-bottom: 0.5rem;
+}
+
+.section-subtitle-gold { 
+    font-family: 'Cinzel', serif; 
+    font-size: clamp(2rem, 6vw, 4rem); /* Responsive font size. */
+    color: #fff;
+    /* Multi-layered text shadow for a strong glow. */
+    text-shadow: 
+        0 0 10px rgba(255, 255, 255, 0.6), 
+        0 0 20px rgba(255, 255, 255, 0.3),
+        0 0 40px rgba(255, 255, 255, 0.2);
+    line-height: 1.2; 
+}
+
+.section-desc {
+    max-width: 600px;
+    margin: 1.5rem auto 0; /* Adds top margin and centers the element. */
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.6);
+    padding: 0 1rem;
+}
+
+/* --- Card-Specific Typography --- */
+.pillar-card h3 { 
+    color: #fff; 
+    font-size: 1.6rem; 
+    margin: 1.5rem 0 0.5rem; 
+    text-shadow: 
+        0 0 8px rgba(255, 255, 255, 0.6), 
+        0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+.pillar-card p {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.5); /* Faded text for the description. */
+}
+
+.philosophy-card h3 { 
+    color: #fff; 
+    font-size: 1.5rem; 
+    margin-top: 1rem; 
+    text-shadow: 
+        0 0 8px rgba(255, 255, 255, 0.6), 
+        0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+.philosophy-card p {
+    color: rgba(255,255,255,0.6);
+    margin-top: 0.5rem;
+}
+/* Styles for the "Read More" link inside philosophy cards. */
+.read-more {
+    display: inline-block;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border-bottom: 1px solid #BF953F; /* Creates a gold underline. */
+    color: #BF953F;
+    padding-bottom: 2px;
+}
+
+/* --- Invocation Section Typography --- */
+.dawn-label {
+    font-family: 'Cinzel', serif;
+    font-weight: 400;
+    color: #BF953F;
+    letter-spacing: 0.4em; /* Very wide letter spacing for a dramatic effect. */
+    font-size: 1rem;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.unveiling-title {
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
+    font-size: clamp(3rem, 8vw, 5rem);
+    color: #fff;
+    /* These properties unset the gold gradient effect, ensuring it's just white glowing text. */
+    background: none;
+    -webkit-background-clip: unset;
+    margin-bottom: 2rem;
+    text-shadow: 
+        0 0 10px rgba(255, 255, 255, 0.6), 
+        0 0 20px rgba(255, 255, 255, 0.3),
+        0 0 40px rgba(255, 255, 255, 0.2);
+}
+
+.invocation-lead {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.2rem, 4vw, 1.8rem);
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 4rem;
+    font-style: italic;
+    line-height: 1.4;
+}
+
+.sacred-scroll-text {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.verse {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.4rem, 5vw, 2rem);
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.7); /* Faded text color by default. */
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+    transition: color 0.5s ease; /* Smoothly transitions the color on hover. */
+}
+
+.verse:hover {
+    color: rgba(255, 255, 255, 1); /* Makes the verse fully white on hover. */
+}
+
+/* Utility class for gold-colored text, simpler than the gradient version. */
+.text-gold {
+    color: #FFD700;
+    text-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+    font-style: italic;
+}
+
+/* Styles for a specially highlighted verse. */
+.highlight-verse {
+    color: #fff;
+    font-size: clamp(1.6rem, 6vw, 2.2rem);
+    font-style: italic;
+    /* Adds a decorative border on the left. */
+    border-left: 2px solid rgba(255, 215, 0, 0.3);
+    padding-left: 2rem;
+    margin: 4rem auto;
+    text-align: left;
+    /* Adds a very subtle gradient background to make it stand out. */
+    background: linear-gradient(90deg, rgba(255,215,0,0.05), transparent);
+}
+
+.mantra {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(2rem, 6vw, 3rem);
+    margin-top: 5rem;
+    color: rgba(255, 255, 255, 0.9);
+    letter-spacing: 0.1em;
+    text-shadow: 
+        0 0 10px rgba(255, 255, 255, 0.5), 
+        0 0 20px rgba(255, 255, 255, 0.3);
+}

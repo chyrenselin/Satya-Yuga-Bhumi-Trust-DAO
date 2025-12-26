@@ -1,0 +1,74 @@
+/* --- Hero Section Styles (Side-by-Side Layout) --- */
+
+/* The main container for the hero section. */
+.hero {
+  padding: clamp(2.5rem, 7vh, 4.5rem) 0; /* Responsive vertical padding. */
+  display: flex; /* Uses flexbox for the layout. */
+  flex-direction: row; /* Arranges children (image and text) side-by-side. */
+  align-items: center; /* Vertically aligns the image and text if their heights differ. */
+  gap: clamp(1.8rem, 4vw, 3rem); /* Creates a responsive gap between the image and text. */
+  text-align: left; /* Overrides any inherited center alignment. */
+  margin-bottom: clamp(2.5rem, 7vh, 4.5rem);
+  animation: fadeIn 1.2s ease-out 0.2s backwards; /* Applies a fade-in animation. */
+}
+
+/* The container for the hero image, creating a "matted frame" effect. */
+.hero-image-area {
+  /* Flex shorthand: flex-grow: 0 (don't grow), flex-shrink: 0 (don't shrink),
+     flex-basis: responsive value. The width will be between 280px and 380px,
+     attempting to be 33% of the container width. */
+  flex: 0 0 clamp(280px, 33%, 380px);
+  border: 10px solid #A0522D; /* A thick, earthy "Sienna" brown outer frame. */
+  background-color: #F5F5DC; /* A "Beige" color for the matting around the image. */
+  padding: 6px; /* Space between the outer frame and the image. */
+  border-radius: 18px;
+  /* A complex shadow: a soft drop shadow for depth, plus an inset shadow that acts as an inner border. */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35), 0 0 0 3px #D2B48C inset; /* A "Tan" inset border. */
+}
+
+/* Styles for the actual image element inside the frame. */
+.hero-image-area img {
+  display: block;
+  width: 100%;
+  height: auto; /* Maintains aspect ratio. */
+  border-radius: 10px;
+  /* Applies a color filter to give the image a warmer, more artistic, and slightly aged look. */
+  filter: sepia(15%) brightness(102%) contrast(108%) saturate(115%);
+  /* Smooth transition for the hover effects. */
+  transition: transform 0.4s ease-in-out, filter 0.4s ease-in-out;
+}
+
+/* Applies a pulsing animation to the image if it has the 'pulsing' class. */
+.hero-image-area img.pulsing {
+  /* The 'pulseZoom' animation is likely defined in a common animations.css file. */
+  animation: pulseZoom 1.5s ease-in-out infinite 0.8s;
+}
+
+/* Hover effect for the image area. */
+.hero-image-area:hover img {
+   transform: scale(1.025); /* Slightly zooms into the image. */
+   /* Adjusts the filter to make the image slightly more vibrant and bright on hover. */
+   filter: sepia(5%) brightness(105%) contrast(110%) saturate(125%);
+}
+
+/* The container for the text content next to the image. */
+.hero-content-area {
+  flex-grow: 1; /* Allows this container to grow and take up the remaining available space. */
+  color: #3E2723; /* A dark brown text color. */
+}
+
+/* Styles for the heading within the hero section. */
+.hero h2 {
+  font-size: clamp(1.5rem, 2.5vw, 2.0rem); /* Responsive font size. */
+  margin-bottom: 0.8rem;
+  color: #C04000; /* A strong, spiritual orange-red color. */
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+/* Styles for the paragraph within the hero section. */
+.hero p {
+  font-size: clamp(1.05rem, 2.2vw, 1.3rem); /* Responsive font size. */
+  margin-bottom: 2rem;
+  color: #5D4037; /* An earthy brown text color. */
+}

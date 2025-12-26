@@ -1,0 +1,60 @@
+/* --- Primary Header Navigation --- */
+.primary-navigation {
+    width: 100%; margin-top: calc(var(--spacing-unit) * 3);
+    padding-top: calc(var(--spacing-unit) * 2);
+    border-top: 1.5px solid rgba(234, 234, 234, 0.25);
+}
+.primary-navigation ul {
+    list-style: none; display: flex; justify-content: center;
+    flex-wrap: wrap; gap: calc(var(--spacing-unit)* 1);
+}
+.primary-navigation ul li a {
+    font-family: var(--font-ui); font-weight: 500; font-size: 1.05em;
+    padding: calc(var(--spacing-unit) * 1.25) calc(var(--spacing-unit) * 2.5);
+    color: var(--color-header-text); border-radius: var(--border-radius);
+    transition: background-color var(--transition-speed-subtle) var(--transition-easing),
+                color var(--transition-speed-subtle) var(--transition-easing),
+                transform var(--transition-speed-subtle) var(--transition-easing);
+    display: block; opacity: 0.92;
+}
+.primary-navigation ul li a:hover,
+.primary-navigation ul li a:focus {
+    background-color: rgba(255,255,255,0.12); color: var(--color-accent-primary-glow);
+    opacity: 1; transform: translateY(-2.5px);
+}
+/* Responsive behavior for smaller screens is defined in responsive.css. */
+
+/* --- Sticky Table of Contents (ToC) --- */
+.toc-navigation {
+    background-color: rgba(251, 240, 228, 0.95); backdrop-filter: blur(12px);
+    padding: calc(var(--spacing-unit)*1.5) calc(var(--spacing-unit) * 1.25);
+    border-bottom: 1.5px solid var(--color-border-subtle);
+    position: sticky; top: 0; z-index: 999;
+    box-shadow: var(--shadow-profound);
+}
+.toc-navigation ul {
+    list-style: none; display: flex; justify-content: center;
+    flex-wrap: wrap; gap: var(--spacing-unit); padding: calc(var(--spacing-unit)*0.35) 0;
+}
+.toc-navigation ul li a {
+    font-family: var(--font-ui); font-size: 0.92em;
+    padding: calc(var(--spacing-unit) * 1) calc(var(--spacing-unit) * 2);
+    color: var(--color-link); white-space: nowrap; border-radius: var(--border-radius);
+    transition: background-color var(--transition-speed-subtle) var(--transition-easing),
+                color var(--transition-speed-subtle) var(--transition-easing),
+                box-shadow var(--transition-speed-subtle) var(--transition-easing);
+}
+.toc-navigation ul li a:hover,
+.toc-navigation ul li a:focus {
+    background-color: rgba(212, 175, 55, 0.15); color: var(--color-accent-primary);
+}
+.toc-navigation ul li a.active {
+    color: var(--color-accent-primary); font-weight: 700;
+    background-color: rgba(212, 175, 55, 0.1);
+    box-shadow: inset 0 -3px 0 var(--color-accent-primary);
+}
+.toc-navigation ul li a.sub-link {
+    padding-left: calc(var(--spacing-unit) * 4); font-size: 0.88em; opacity: 0.92;
+}
+.toc-navigation ul li a.sub-link.active { opacity: 1; font-weight: 600; }
+/* Responsive behavior for the ToC is defined in responsive.css. */

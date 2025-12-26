@@ -1,0 +1,177 @@
+/* --- Print-Specific Styles --- */
+@media print {
+    :root {
+        /* Overrides default colors for high-contrast, black-and-white printing. */
+        --color-background: #FFFFFF !important;
+        --color-text-primary: #000000 !important;
+        --color-text-secondary: #1A1A1A !important;
+        --color-header-bg: #FFFFFF !important;
+        --color-header-text: #000000 !important;
+        --color-accent-primary: #555555 !important;
+        --color-accent-secondary: #333333 !important;
+        --color-border-subtle: #AAAAAA !important;
+        --color-highlight-earth: #114400 !important;
+        --color-link: #0000AA !important;
+        /* Custom property for dynamically inserting the print date via JavaScript. */
+        --print-date: ""; /* This value is set dynamically by JavaScript before printing. */
+    }
+    html { font-size: 10pt; }
+    body { line-height: 1.4; background-color: var(--color-background); color: var(--color-text-primary); width: auto !important; background-image: none !important; }
+
+    /* Hides interactive and non-essential elements to create a clean print layout. */
+    .site-header .header-actions-container,
+    .primary-navigation,
+    .toc-navigation,
+    .site-footer .footer-navigation,
+    .skip-link,
+    .no-print,
+    #google_translate_element,
+    #stopAnthemBtn,
+    #understandPrincipalsBtn,
+    .button { /* Ensures that pseudo-elements do not interfere with print styles. */
+        display: none !important;
+        visibility: hidden !important;
+        height: 0 !important;
+        width: 0 !important;
+        position: absolute !important;
+        top: -9999px !important;
+        left: -9999px !important;
+        overflow: hidden !important;
+        border: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* Disables all animations and transitions for a static print view. */
+    .ethereal-glow-text, .cosmic-pulse-bg,
+    .emoji-spin, .emoji-pulse, .emoji-sandclock,
+    section > h2:hover .section-icon-unicode, .pillar:hover .pillar-icon-unicode,
+    .site-logo-svg circle, .site-logo-svg path { /* Groups all animated elements to disable their animations. */
+        animation: none !important;
+    }
+    .site-logo-svg .logo-bg-circle,
+    .site-logo-svg .logo-outer-ring,
+     .site-logo-svg .spark-trail-group use { /* Preserves the SVG structure for the logo while styling it for print. */
+         fill: none !important; /* Ensures that SVG paths are not filled, using only strokes for clarity. */
+         stroke: #333 !important; /* Sets a dark stroke color for SVG elements. */
+         opacity: 1 !important; /* Makes sure that SVG elements are fully visible. */
+         filter: none !important; /* Removes any filters (like blur or glow) from SVG elements. */
+    }
+     /* Hides animated sparkle instances that are not suitable for print. */
+    .site-logo-svg .spark-trail-group { display: none !important;}
+
+     .site-logo-svg .logo-center-core, .site-logo-svg .logo-inner-spark {
+          fill: #333 !important; stroke: #666 !important; filter: none !important; opacity: 1 !important;
+     }
+
+
+    .site-header {
+        background-image: none !important;
+        background-color: transparent !important;
+        border-bottom: 2px solid #888 !important;
+        padding: 0.7em 0 !important;
+        margin-bottom: 1em !important;
+        box-shadow: none !important;
+    }
+    .site-header .header-content, .logo-title-container { display: block !important; text-align: left !important; }
+    .logo-title-container { margin-bottom: 0.3em; gap: 0.5em !important;} /* Reduces the spacing between header elements for a more compact print layout. */
+
+    .site-header .logo-title-container .site-logo-svg {
+        display: inline-block !important;
+        height: 30px !important; width: 30px !important;
+        vertical-align: middle !important; margin-right: 7px !important;
+        filter: none !important; /* Removes any filters applied to the logo in the default stylesheet. */
+    }
+
+
+    .site-header .title-container { display:inline-block !important; vertical-align: middle;}
+    .site-header h1 { font-size: 18pt !important; color: var(--color-text-primary) !important; text-shadow: none !important; }
+    .site-header h1 .title-line-1, .site-header h1 .title-line-2 { display: block !important; font-size: inherit !important; line-height: 1.1 !important;} /* Adjusts the line height for better readability in print. */
+    .site-header .subtitle { display: none !important; /* Hides the subtitle to save space and improve focus in the print version. */ }
+
+
+    .constitution-body { margin: 0.8cm auto; padding: 0; box-shadow: none !important; border: none !important; max-width: 100% !important; }
+
+    a { color: var(--color-link) !important; text-decoration: underline !important; /* Adds a clear underline to all links to make them identifiable in print. */ }
+     a[href^="#"]:after { content: ""; /* Prevents the browser from adding extra content after internal links. */ }
+     a[href]:not([href^="#"]):after { content: " (" attr(href) ")"; font-size: 0.8em; color: #333; word-break: break-all; }
+
+    h1, h2, h3, h4 { page-break-after: avoid; page-break-inside: avoid; font-family: var(--font-heading-alt), 'Times New Roman', serif !important; }
+    h2 { font-size: 15pt !important; margin-bottom: 1em !important; padding-bottom: 0.5em !important;}
+    h3 { font-size: 12pt !important; margin-bottom: 0.8em !important; }
+    h4 { font-size: 10.5pt !important; margin-bottom: 0.6em !important;}
+     section > h2 { border-bottom-color: #777 !important; }
+
+    p, blockquote, ul, ol, .pillar, .article-clause { page-break-inside: avoid; }
+    .highlight-earth { color: var(--color-highlight-earth) !important; font-style: normal !important; }
+
+    .pillar {
+        border: 1px solid var(--color-border-subtle) !important;
+        background: none !important; box-shadow: none !important;
+        padding: 0.7em !important;
+        text-align: left !important; /* Aligns pillar content to the left for a more traditional document layout. */
+    }
+     .pillar h3, .pillar p { max-width: 100% !important; } /* Ensures pillar text can use the full width of its container. */
+     .pillar-icon-unicode {
+         display: inline !important;
+         margin-right: 0.5em !important; opacity: 1 !important;
+         color: var(--color-text-secondary) !important; font-size: 0.9em !important;
+         transform: none !important; /* Resets any transformations on the pillar icons. */
+    }
+    .pillar h3 { font-size: 12pt !important; color: var(--color-text-primary) !important; } /* Ensures pillar headings use the primary text color for consistency. */
+     .pillar p { font-size: 9.5pt !important; color: var(--color-text-secondary) !important; line-height: 1.3 !important;} /* Reduces the font size of pillar text to fit more content on the page. */
+
+    .signature-mark, .timeless-marker { color: var(--color-text-secondary) !important; font-family: var(--font-main-text) !important; }
+
+     .constitution-article { border: 1px solid var(--color-border-subtle) !important; box-shadow: none !important; padding: 1em !important; margin-bottom: 1.2em !important;}
+     .constitution-article:hover { border-color: var(--color-border-subtle) !important;} /* Removes the hover effect on articles, as it is not applicable to print. */
+     .article-header { padding-bottom: 0.8em !important; margin-bottom: 1.2em !important;}
+     .article-number { background-color: #eee !important; color: var(--color-text-primary) !important; font-size: 9pt !important; padding: 2px 6px !important; box-shadow: none !important;}
+    .constitution-article h3 { font-size: 13pt !important;}
+     .article-clause { margin-bottom: 1em !important; padding-left: 0.5em !important;}
+     .article-clause h4 { font-size: 10.5pt !important; margin-bottom: 0.5em !important;}
+     .article-clause p, .article-clause ul, .article-clause ol { font-size: 10pt !important; line-height: 1.4 !important; margin-left: 0.8em !important; padding-left: 0.8em !important;}
+     .article-clause li { margin-bottom: 0.5em !important; }
+
+    #living-archive-info { border-bottom: none !important; margin-bottom: 0.8em !important;}
+     #living-archive-info h2:before { content:"Guidance on Eternal Preservation: "; font-style: normal; } /* Provides a more descriptive title for the preservation section in print. */
+    #living-archive-info li { font-size: 9.5pt !important; padding-left: 1.5em !important; margin-bottom: 0.5em !important; }
+    #living-archive-info li::before { font-size: 0.9em !important; } /* Adjusts the size of list item icons for better print scaling. */
+
+    /* Adds print styles for the Eternal Beacon section if it exists. */
+    #eternal-beacon-conceptual { border-bottom: none !important; margin-bottom: 0.8em !important;}
+     #eternal-beacon-conceptual h2:before { content:"Abstract Semantic Language & Eternal Beacon: "; font-style: normal; } /* Provides a specific, descriptive title for the Eternal Beacon section in print. */
+    #eternal-beacon-conceptual p { font-size: 9pt !important; line-height: 1.3 !important; color: var(--color-text-secondary) !important;}
+
+    #living-archive-info p:last-of-type:after {
+        display: block; white-space: pre-wrap; font-style: italic;
+        font-size: 0.85em; margin-top: 1em;
+        border-top: 1px solid #aaa; padding-top: 0.3em;
+        content: "Printed: " var(--print-date, "Date Not Set") ". This transient rendering should be cross-referenced with enduring archival forms of the Vishwa Samvidhan for applications across millennia.";
+        color: #555 !important;
+    } /* The --print-date custom property will be populated by JavaScript. */
+
+    .site-footer {
+        border-top: 2px solid #888 !important;
+        background: none !important;
+        padding: 0.7em 0 !important;
+        margin-top: 1.5em !important;
+    }
+    .site-footer p { color: #111 !important; opacity: 1 !important; margin-bottom: 0.3em !important; }
+    .site-footer .timeless-marker { color: #000 !important; }
+
+
+    @page {
+        margin: 1cm 1.2cm;
+        @bottom-center {
+            content: "Vishwa Samvidhan – Covenant of Earth – Page " counter(page) " of " counter(pages);
+            font-size: 8pt; color: #333; font-family: var(--font-ui);
+        }
+    }
+    @page :first {
+        margin-top: 1.5cm;
+    }
+
+    /* Ensures that any placeholder text is hidden in the print output. */
+    .placeholder-text { display:none; }
+}

@@ -1,0 +1,27 @@
+/* This file defines common interactive styles for various button classes across the site. */
+
+/* Base transition for all specified button classes. */
+/* This ensures that any changes to their properties (like transform or box-shadow) are animated smoothly. */
+.button, .sacred-journey-btn, .translate-button {
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* A nice easing function for a snappy but smooth feel. */
+}
+
+/* Styles for when a button is hovered over with a mouse or focused using a keyboard. */
+.button:hover, .button:focus-visible,
+.sacred-journey-btn:hover, .sacred-journey-btn:focus-visible,
+.translate-button:hover, .translate-button:focus-visible {
+  /* Lifts the button up slightly and makes it a tiny bit larger, creating a "pop" or "float" effect. */
+  transform: translateY(-2px) scale(1.02);
+  /* Adds a more pronounced shadow to enhance the lifting effect, with a subtle inset shadow for added depth. */
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3), 0 1px 2px rgba(0,0,0,0.1) inset;
+}
+
+/* Styles for when a button is actively being pressed down. */
+.button:active,
+.sacred-journey-btn:active,
+.translate-button:active {
+  /* Moves the button back to its original vertical position and shrinks it slightly to give a "pressed in" feel. */
+  transform: translateY(0px) scale(0.99);
+  /* Reduces the shadow to further enhance the "pressed in" illusion. */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2), 0 1px 2px rgba(0,0,0,0.1) inset;
+}

@@ -1,0 +1,269 @@
+/* This @import rule loads the specified font families from Google Fonts. */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Lato:wght@400;700&display=swap');
+
+/* --- Root-Level Stylesheet --- */
+/* This file defines the core design system (variables) and base layout for the main, light-themed pages. */
+
+/* --- CSS Variables (Design System) --- */
+/* These variables are defined on the :root element, making them globally available. */
+:root {
+    /* Color Palette */
+    --color-background: #fdfaf6;      /* A warm, gentle off-white for the main background. */
+    --color-text: #424242;            /* A dark, warm gray for primary text, providing good readability. */
+    --color-primary: #FF9933;         /* A vibrant saffron/marigold orange for primary accents (links, highlights). */
+    --color-primary-hover: #fb8c1c;   /* A slightly darker shade of saffron for hover effects. */
+    --color-dark-bg: #ece5d8;         /* A light, earthy taupe used for headers and footers. */
+    --color-light-text: #424242;      /* The main text color, intended for use on light backgrounds like the header/footer. */
+    --color-border: #dcd3c8;          /* A soft, earthy color for borders. */
+    --color-card-bg: rgba(255, 255, 255, 0.6); /* A semi-transparent white for cards to give a layered feel. */
+    --color-card-p: #616161;          /* A medium gray for paragraph text inside cards. */
+
+    /* Font Families */
+    --font-headings: 'Montserrat', sans-serif; /* A clean, modern sans-serif for all headings. */
+    --font-body: 'Lato', sans-serif;          /* A highly readable sans-serif for all body text. */
+
+    /* Layout & Sizing */
+    --spacing-unit: 1rem;                      /* The base unit for margins and paddings (typically 16px). */
+    --container-max-width: 1140px;             /* The maximum width for main content containers. */
+    --border-radius: 0.35rem;                  /* A standard border radius for elements like cards and buttons. */
+    --transition-speed: 0.3s;                  /* The standard duration for CSS transitions. */
+}
+
+/* --- Base & Reset --- */
+/* A universal reset to ensure consistent box model behavior and remove default margins/paddings. */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth; /* Enables smooth scrolling for in-page anchor links (e.g., #top). */
+}
+
+body {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.6;
+    background-color: var(--color-background);
+    /* A subtle, repeating background texture using a base64 encoded SVG. */
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMCIgaGVpZ2h0PSIzMCIgdmlld0JveD0iMCAwIDEyMCAxMjAiPjxlbGxpcHNlIGN4PSI2MCIgY3k9IjYwIiByeD0iNTAiIHJ5PSIyMCIgZmlsbD0iI2RhYmE4ZCIgb3BhY2l0eT0iMC4xIi8+PC9zdmc+');
+    color: var(--color-text);
+    /* This flexbox setup creates a "sticky footer" layout. */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensures the body is at least the full height of the viewport. */
+}
+
+/* --- Header --- */
+.site-header {
+    background-color: var(--color-dark-bg);
+    color: var(--color-light-text);
+    padding: var(--spacing-unit) 0;
+    position: sticky; /* Makes the header stick to the top of the viewport when scrolling. */
+    top: 0;
+    z-index: 100; /* Ensures the header stays above other content. */
+    transition: background-color var(--transition-speed);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow below the header. */
+}
+
+.header-container {
+    max-width: var(--container-max-width);
+    margin: 0 auto; /* Centers the container. */
+    padding: 0 var(--spacing-unit);
+    display: flex;
+    justify-content: space-between; /* Pushes the title and nav to opposite ends. */
+    align-items: center; /* Vertically aligns items. */
+}
+
+.site-title {
+    font-family: var(--font-headings);
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--color-light-text);
+}
+
+.site-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 0.5rem; /* Reduced space between nav items. */
+}
+
+.site-nav a {
+    text-decoration: none;
+    color: var(--color-light-text);
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    transition: color var(--transition-speed);
+}
+
+/* Highlights the active page link or on hover. */
+.site-nav a:hover, .site-nav a.active {
+    color: var(--color-primary);
+}
+
+/* --- Main Content --- */
+main {
+    flex: 1; /* This makes the main element grow to fill any available space, pushing the footer down. */
+    padding: calc(var(--spacing-unit) * 2) var(--spacing-unit);
+}
+
+.content-container {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.9); /* A slightly transparent white to hint at the body background. */
+    padding: calc(var(--spacing-unit) * 2);
+    border-radius: var(--border-radius);
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    border: 1px solid var(--color-border);
+}
+
+/* --- Footer --- */
+.site-footer {
+    background-color: var(--color-dark-bg);
+    color: var(--color-light-text);
+    padding: calc(var(--spacing-unit) * 2) 0;
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: calc(var(--spacing-unit) * 3); /* Pushes the footer away from the content above it. */
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1); /* Adds a shadow above the footer. */
+}
+
+/* --- Typography & Common Elements --- */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-headings);
+    margin-bottom: var(--spacing-unit);
+    line-height: 1.3;
+    text-shadow: none; /* Explicitly removes text shadow for headings on this light theme. */
+    color: var(--color-text);
+}
+
+.page-title {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+p {
+    margin-bottom: var(--spacing-unit);
+}
+
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color var(--transition-speed);
+}
+
+a:hover {
+    color: var(--color-primary-hover);
+}
+
+/* --- Specific Styles for Index Page's Content --- */
+.welcome-section {
+    text-align: center;
+    padding: calc(var(--spacing-unit) * 2) 0;
+}
+
+.welcome-section h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: var(--spacing-unit);
+}
+
+.welcome-section p {
+    font-size: 1.1rem;
+    color: var(--color-text);
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+/* The grid container for the navigation cards on the homepage. */
+.nav-card-grid {
+    display: grid;
+    /* Creates a responsive grid that fits as many columns as possible, with each column at least 280px wide. */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: calc(var(--spacing-unit) * 1.5);
+    margin-top: calc(var(--spacing-unit) * 3);
+}
+
+/* Styles for the individual clickable cards. */
+.nav-card {
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    padding: calc(var(--spacing-unit) * 2);
+    text-align: center;
+    background-color: var(--color-card-bg);
+    backdrop-filter: blur(5px); /* Creates a subtle frosted glass effect. */
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed), border-color var(--transition-speed);
+}
+
+/* Hover effect for the navigation cards. */
+.nav-card:hover {
+    transform: translateY(-5px); /* Lifts the card slightly. */
+    box-shadow: 0 5px 20px rgba(255, 153, 51, 0.2); /* Adds a saffron-colored glow. */
+    border-color: rgba(255, 153, 51, 0.5); /* Makes the border saffron-colored. */
+}
+
+.nav-card h3 {
+    font-size: 1.35rem;
+    margin-bottom: 0.75rem;
+    color: var(--color-primary);
+}
+
+.nav-card p {
+    font-size: 0.9rem;
+    color: var(--color-card-p);
+    margin-bottom: 0;
+}
+
+/* --- Mobile Navigation --- */
+/* The hamburger menu button, hidden on desktop. */
+.mobile-nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--color-light-text);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Media query for tablet-sized screens and smaller. */
+@media (max-width: 768px) {
+    /* Hide the desktop navigation... */
+    .site-nav {
+        display: none;
+        width: 100%;
+        position: absolute;
+        top: 60px; /* Position it just below the header. */
+        left: 0;
+        background-color: var(--color-dark-bg);
+    }
+
+    /* ...and show it when the 'active' class is added by JavaScript. */
+    .site-nav.active {
+        display: block;
+    }
+
+    /* Stack the navigation links vertically. */
+    .site-nav ul {
+        flex-direction: column;
+        padding: var(--spacing-unit);
+    }
+
+    /* Show the hamburger menu button. */
+    .mobile-nav-toggle {
+        display: block;
+    }
+
+    /* Prevent the page from scrolling when the mobile navigation is open. */
+    body.nav-open {
+        overflow: hidden;
+    }
+
+    /* Allow the nav menu itself to scroll if its content overflows on small screens. */
+    .site-nav.active {
+        max-height: 80vh;
+        overflow-y: auto;
+    }
+}

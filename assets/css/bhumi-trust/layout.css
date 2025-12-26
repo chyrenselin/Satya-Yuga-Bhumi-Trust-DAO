@@ -1,0 +1,66 @@
+/* --- Layout Containers & Grids --- */
+
+/* Defines the main content wrapper for the page. */
+.main-container { 
+    width: 100%; 
+    max-width: 1200px; /* Sets a maximum width to prevent the content from becoming too wide on large screens. */
+    margin: 0 auto; /* Centers the container horizontally within its parent. */
+    padding: 2rem; /* Adds padding on all sides of the container. */
+    position: relative; /* Establishes a positioning context. */
+    z-index: 2; /* Ensures this content appears above elements with a lower z-index (like the background). */
+}
+
+/* Styles the container for the controls at the top of the page (translation and audio). */
+.top-bar-controls { 
+    display: flex; /* Uses flexbox for layout. */
+    flex-direction: column; /* Stacks child elements vertically. */
+    align-items: center; /* Centers the child elements horizontally. */
+    margin-bottom: 2rem; /* Adds space below the controls. */
+    width: 100%; 
+}
+
+/* Styles the container that groups the translation button and the widget. */
+.translate-pair {
+    display: flex;
+    gap: 1rem; /* Adds space between the button and the widget. */
+    justify-content: center;
+    flex-wrap: wrap; /* Allows items to wrap to the next line on smaller screens. */
+}
+
+/* Styles the container for the audio control buttons. */
+.audio-controls {
+    margin-top: 1rem;
+    text-align: center;
+    width: 100%;
+}
+
+/* --- Grid Systems --- */
+
+/* Common base styles for both the pillars and philosophy grids. */
+.pillars-grid, .philosophy-grid {
+    display: grid; /* Defines the container as a CSS Grid layout. */
+    gap: 2rem; /* Sets the space between grid items. */
+}
+
+/* Specific layout for the philosophy grid (which contains 2 larger cards). */
+.philosophy-grid {
+    /* This creates a responsive grid.
+       'repeat(auto-fit, ...)' tells the grid to fit as many columns as possible.
+       'minmax(280px, 1fr)' tells each column to be at least 280px wide, but can grow to an equal fraction (1fr) of the available space.
+       This makes the grid automatically adjust from 2 columns to 1 on smaller screens. */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 4rem; /* Overrides the default gap with a larger one. */
+}
+
+/* Specific layout for the pillars grid (which contains 4 smaller cards). */
+.pillars-grid {
+    /* Uses the same responsive grid technique as above, but with a smaller minimum width.
+       This allows for more columns (e.g., 4) on wider screens before wrapping. */
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+/* Styles the container for the main "Call to Action" button. */
+.cta-container {
+    margin: 8rem 0 4rem; /* Adds significant vertical space around the button to make it stand out. */
+    text-align: center; /* Centers the button within the container. */
+}

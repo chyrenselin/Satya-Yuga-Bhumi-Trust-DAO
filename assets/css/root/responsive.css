@@ -1,0 +1,117 @@
+/* --- Responsive Styles for Root-Level Pages --- */
+/* This file contains style overrides for different screen sizes to ensure a good user experience on all devices. */
+
+/* --- Tablet & Smaller (up to 768px) --- */
+/* This media query applies styles for screens that are 768px wide or less. */
+@media (max-width: 768px) {
+    /* Reduces the font size of main headings for better fit on smaller screens. */
+    .welcome-section h1, .page-title {
+        font-size: 2rem;
+    }
+
+    /* Reduces the font size of paragraphs in the welcome section. */
+    .welcome-section p {
+        font-size: 1rem;
+    }
+
+    /* Stacks the navigation card grid into a single column. */
+    .nav-card-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --- Standard Mobile Phones (up to 480px) --- */
+/* This media query targets typical mobile phone screens in portrait mode. */
+@media (max-width: 480px) {
+    /* Further reduces heading font sizes. */
+    .welcome-section h1, .page-title {
+        font-size: 1.8rem;
+    }
+
+    .welcome-section .page-title {
+        font-size: 1.5rem;
+    }
+
+    /* Further reduces paragraph font size. */
+    .welcome-section p {
+        font-size: 0.9rem;
+    }
+
+    /* Reduces padding inside the navigation cards. */
+    .nav-card {
+        padding: 1rem;
+    }
+
+    /* Reduces font sizes within the navigation cards. */
+    .nav-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .nav-card p {
+        font-size: 0.8rem;
+    }
+
+    /* Makes the journey button smaller. */
+    .sacred-journey-btn {
+        font-size: 0.9rem;
+        padding: 0.8rem 1rem;
+    }
+}
+
+/* --- Small Mobile Phones (up to 320px) --- */
+/* This media query targets smaller devices like the original iPhone SE. */
+@media (max-width: 320px) {
+    /* Final font size reductions for very narrow screens. */
+    .welcome-section h1, .page-title {
+        font-size: 1.5rem;
+    }
+
+    .welcome-section .page-title {
+        font-size: 1.2rem;
+    }
+
+    .welcome-section p {
+        font-size: 0.8rem;
+    }
+
+    .nav-card h3 {
+        font-size: 1rem;
+    }
+
+    .nav-card p {
+        font-size: 0.7rem;
+    }
+
+    /* Makes the journey button even smaller. */
+    .sacred-journey-btn {
+        font-size: 0.8rem;
+        padding: 0.6rem 0.8rem;
+    }
+
+    /* Stacks the translation button and widget vertically to prevent overflow. */
+    #translator-container .translate-pair {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* --- Extra Small Devices (up to 250px) --- */
+/* This media query is a safeguard for very narrow, niche devices. */
+@media (max-width: 250px) {
+    /* Drastically reduces font sizes to prevent layout breaking. */
+    .site-title {
+        font-size: 0.8rem;
+    }
+
+    .welcome-section h1, .page-title {
+        font-size: 1.2rem;
+    }
+
+    .welcome-section .page-title {
+        font-size: 1rem;
+    }
+
+    .welcome-section p {
+        font-size: 0.7rem;
+    }
+}

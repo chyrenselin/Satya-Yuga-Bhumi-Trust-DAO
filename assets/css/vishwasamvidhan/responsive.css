@@ -1,0 +1,319 @@
+/* --- Responsive Design Adjustments --- */
+/* Media queries for various screen sizes to ensure a responsive layout. */
+@media (max-width: 1024px) {
+    html { font-size: calc(var(--base-font-size) * 0.96); }
+    .constitution-body { padding: calc(var(--spacing-unit) * 4) calc(var(--spacing-unit) * 4.5); }
+}
+
+@media (max-width: 768px) {
+    html { font-size: calc(var(--base-font-size) * 0.93); }
+    body { line-height: 1.75; }
+    .site-header .header-content { flex-direction: column; align-items: center; text-align: center; }
+    .logo-title-container { width: 100%; justify-content: center; flex-direction: column; }
+    .header-actions-container { margin-left: 0; margin-top: calc(var(--spacing-unit)*2); flex-wrap: wrap; justify-content: center; width: 100%; gap: calc(var(--spacing-unit)*1); } /* Adjusts the gap between elements for better spacing on smaller screens. */
+    .header-actions-container .button-group {
+        flex-direction: column; /* Stacks buttons vertically on smaller screens. */
+        align-items: center; width: 90%; max-width: 320px; /* Makes buttons wider to be more tap-friendly on mobile devices. */
+         gap: calc(var(--spacing-unit)*1);
+    }
+     .header-actions-container .button-group .button {
+         width: 100%;
+     }
+     .header-actions-container .button-group > *:last-child { margin-bottom: 0; } /* Removes the bottom margin from the last button in a stacked group. */
+
+    .primary-navigation ul { justify-content: space-around; }
+    .primary-navigation ul li a { padding: calc(var(--spacing-unit)*0.9) calc(var(--spacing-unit)*1.25); font-size: 0.98em; } /* Adjusts padding and font size for navigation links on smaller screens. */
+
+    .constitution-body { margin: calc(var(--spacing-unit)*3) auto; padding: calc(var(--spacing-unit)*3); }
+    p { max-width: 95%; }
+    section > h2 { font-size: clamp(1.6em, 5vw, 2.2em); margin-bottom: calc(var(--spacing-unit)*3);}
+    .article-clause p, .article-clause ul, .article-clause ol { margin-left: calc(var(--spacing-unit)*1.5); line-height: 1.8; }
+        /* Styles for the Table of Contents on smaller screens, requiring careful vertical space management. */
+    .toc-navigation { display: block; padding: var(--spacing-unit); max-height: 130px; /* Reduces the maximum height of the ToC on mobile devices. */ overflow-y: auto; }
+    .toc-navigation ul { flex-wrap: wrap; justify-content: center; max-height: none; }
+    .toc-navigation ul li a { padding: calc(var(--spacing-unit)*0.7) calc(var(--spacing-unit)*1); font-size:0.8em; white-space: normal; text-align: center;}
+}
+
+@media (max-width: 480px) {
+    html { font-size: calc(var(--base-font-size) * 0.89); }
+    body { line-height: 1.7; }
+    .site-header .subtitle { font-size: clamp(0.85em, 3.2vw, 1em); }
+    .header-actions-container { flex-direction: column; align-items: center; gap: calc(var(--spacing-unit) * 1.5); width: 100%; }
+    .header-actions-container .button-group { width: 95%; max-width: 350px; } /* Makes buttons slightly wider on very narrow screens. */
+     /* Styles to adjust the Google Translate widget on small screens. */
+    #google_translate_element { width: auto; align-self: center; margin-bottom: calc(var(--spacing-unit) * 1); padding: calc(var(--spacing-unit)*0.6) calc(var(--spacing-unit)*0.8);}
+     #google_translate_element select.goog-te-combo { max-width: 160px; font-size: clamp(0.85em, 2.5vw, 0.95em) !important; }
+     .header-actions-container .button-group .button { width: 100%; max-width: none; margin-bottom: calc(var(--spacing-unit)*1); }
+     .header-actions-container .button-group > *:last-child { margin-bottom: 0;}
+
+
+    /* Styles for the Table of Contents on smaller screens, requiring careful vertical space management. */
+    .toc-navigation { display: block; padding: var(--spacing-unit); max-height: 130px; /* Reduces the maximum height of the ToC on mobile devices. */ overflow-y: auto; }
+    .toc-navigation ul { flex-wrap: wrap; justify-content: center; max-height: none; }
+    .toc-navigation ul li a { padding: calc(var(--spacing-unit)*0.7) calc(var(--spacing-unit)*1); font-size:0.8em; white-space: normal; text-align: center;}
+
+    .pillars-grid { grid-template-columns: 1fr; }
+    .pillar { padding: calc(var(--spacing-unit) * 3); } /* Adjusts padding for better spacing on smaller screens. */
+    .pillar-icon-unicode { font-size: 3em; } /* Adjusts font size for better readability on smaller screens. */
+    .pillar h3 { font-size: 1.3em; } /* Adjusts font size for better readability on smaller screens. */
+    .pillar p { font-size: 0.98em; } /* Adjusts font size for better readability on smaller screens. */
+
+    .article-header { flex-direction: column; align-items: flex-start; }
+    .article-number { margin-bottom: calc(var(--spacing-unit)*1); font-size: 0.85em; } /* Adjusts font size for better readability on smaller screens. */
+    .constitution-article h3 { font-size: 1.5em; } /* Adjusts font size for better readability on smaller screens. */
+    .article-clause h4 { font-size: 1.15em; } /* Adjusts font size for better readability on smaller screens. */
+    .article-clause p, .article-clause ul, .article-clause ol { font-size: 1.05em; line-height: 1.8;} /* Adjusts font size and line height for better readability on smaller screens. */
+
+    .site-footer { padding: calc(var(--spacing-unit)*2) calc(var(--spacing-unit)*1.5); font-size: 0.95em;}
+    .site-footer p { font-size: 1em; }
+    .footer-navigation ul li a { font-size: 0.9em; padding: calc(var(--spacing-unit)*0.6) calc(var(--spacing-unit)*1); } /* Adjusts padding for better spacing on smaller screens. */
+    .timeless-marker { font-size: 1em; margin-top: calc(var(--spacing-unit)*2.5);}
+}
+
+@media (max-width: 359px) {
+    html { font-size: calc(var(--base-font-size) * 0.81); }
+    body { line-height: 1.65; }
+    .site-header { padding: calc(var(--spacing-unit)*1) calc(var(--spacing-unit)*1.25); }
+    /* Note: Logo and subtitle are scaled down at breakpoints above this one. */
+    /* .site-logo-svg { height: clamp(35px, 8vw, 45px); width: clamp(35px, 8vw, 45px); } */
+    /* .site-header .subtitle { font-size: clamp(0.6em, 3vw, 0.7em); } */
+    .logo-title-container { gap: calc(var(--spacing-unit) * 0.4); }
+     .header-actions-container .button-group .button { font-size: 0.85em; padding: calc(var(--spacing-unit)*0.8) calc(var(--spacing-unit)*1.2); } /* Adjusts button padding and font size for very small screens. */
+
+    .emoji-spin, .emoji-pulse, .emoji-sandclock { display: inline-block; vertical-align: middle; font-size: 1em; margin-left: 0.5em;} /* Adjusts the size and margin of emoji icons. */
+
+    #google_translate_element { padding: calc(var(--spacing-unit)*0.5); }
+     #google_translate_element .goog-te-gadget-icon { width: clamp(20px, 4vw, 24px) !important; height: clamp(20px, 4vw, 24px) !important; margin-right: calc(var(--spacing-unit)*0.5) !important;}
+    #google_translate_element select.goog-te-combo { font-size: 0.8em !important; padding: calc(var(--spacing-unit)*0.4) calc(var(--spacing-unit)*0.6) !important; max-width: 140px;}
+
+    .primary-navigation ul { flex-direction: column; gap: 0; } .primary-navigation ul li { width: 100%; text-align: center; } .primary-navigation ul li a { font-size: 0.9em; padding: calc(var(--spacing-unit)*0.85) var(--spacing-unit); border-bottom: 1px solid rgba(234, 234, 234, 0.15); } .primary-navigation ul li:last-child a { border-bottom: none; }
+
+    /* Styles to ensure the ToC is displayed on smaller screens, with a less aggressive hiding approach. */
+    /* .toc-navigation { display: block; padding: calc(var(--spacing-unit) * 0.75); max-height: 100px; overflow-y: auto; } /* Reduces the maximum height of the ToC for a more compact layout. */
+    /* .toc-navigation ul { flex-direction:column; align-items:stretch; justify-content: flex-start; gap: 0; } /* Stacks ToC links vertically. */
+    /* .toc-navigation ul li { width: 100%; } */
+    /* .toc-navigation ul li a { font-size: 0.7em; padding: calc(var(--spacing-unit)*0.4) calc(var(--spacing-unit)*0.6); white-space: normal; text-align:left; border-bottom: 1px solid var(--color-border-subtle); } */
+    /* .toc-navigation ul li:last-child a { border-bottom: none; } */
+    /* .toc-navigation ul li a.sub-link { padding-left: calc(var(--spacing-unit)*1.5); } /* Reduces the indentation for sub-links in the ToC. */
+
+
+    .constitution-body { padding: calc(var(--spacing-unit)*2); margin: calc(var(--spacing-unit)*2) auto; } /* Adjusts padding and margin for better spacing on very small screens. */
+    section > h2 { font-size: 1.4em; margin-bottom: calc(var(--spacing-unit)*2.5);}
+    .section-icon-unicode { font-size: 1.5em; margin-right: calc(var(--spacing-unit)*2); }
+    .profound-text { margin: calc(var(--spacing-unit)*2) 0; padding: calc(var(--spacing-unit)*1.5); border-left-width: 4px;}
+    .profound-text p { font-size: 1em; text-indent: 1.5em; } /* Adjusts font size and text indentation. */
+
+    .pillars-grid { gap: calc(var(--spacing-unit)*3); }
+    .pillar { padding: calc(var(--spacing-unit)*2); } /* Adjusts padding for better spacing on smaller screens. */
+     .pillar-icon-unicode { font-size: 2.6em; margin-bottom: calc(var(--spacing-unit)*2);} /* Adjusts font size for better readability on smaller screens. */
+    .pillar h3 { font-size: 1.2em; margin-bottom: calc(var(--spacing-unit)*1.5);} /* Adjusts font size for better readability on smaller screens. */
+    .pillar p { font-size: 0.95em; } /* Adjusts font size for better readability on smaller screens. */
+
+    .constitution-article { margin-bottom: calc(var(--spacing-unit)*5); padding: calc(var(--spacing-unit)*1.5);}
+    .article-header { margin-bottom: calc(var(--spacing-unit)*2); padding-bottom:calc(var(--spacing-unit)*1);}
+    .article-number { font-size: 0.8em; padding: calc(var(--spacing-unit)*0.5) calc(var(--spacing-unit));} /* Adjusts font size and padding. */
+    .constitution-article h3 { font-size: 1.3em; margin-bottom: calc(var(--spacing-unit)*2);} /* Adjusts font size and margin. */
+    .article-clause { margin-bottom: calc(var(--spacing-unit)*2.5); padding-left: calc(var(--spacing-unit));}
+    .article-clause h4 { font-size: 1.1em; margin-bottom: calc(var(--spacing-unit)*0.8); }
+    .article-clause p, .article-clause ul, .article-clause ol { font-size: 1em; line-height: 1.7; margin-left: calc(var(--spacing-unit)*1.5); padding-left: calc(var(--spacing-unit)*2.5);} /* Adjusts font size, line height, and padding. */
+     .article-clause li { margin-bottom: calc(var(--spacing-unit)*0.8);}
+
+    #living-archive-info { margin-bottom: calc(var(--spacing-unit)*5); padding-bottom:calc(var(--spacing-unit)*3); }
+    #living-archive-info h2, #eternal-beacon-conceptual h2 { font-size: 1.2em;}
+     #living-archive-info p, #eternal-beacon-conceptual p { font-size: 0.9em; }
+     #living-archive-info li { font-size: 0.9em; padding-left: calc(var(--spacing-unit)*2.5); margin-bottom: calc(var(--spacing-unit)*0.8); }
+     #living-archive-info li::before { font-size: 1em; top: 0; }
+
+
+    .site-footer { padding: calc(var(--spacing-unit)*1.5); font-size: 0.9em;}
+    .site-footer p { font-size: 0.95em; margin-bottom: calc(var(--spacing-unit)*0.8);}
+    .footer-navigation ul { margin-top: calc(var(--spacing-unit)*1); gap: calc(var(--spacing-unit)*0.8);}
+    .footer-navigation ul li a { font-size: 0.75em; padding: calc(var(--spacing-unit)*0.4) calc(var(--spacing-unit)*0.6); }
+    .timeless-marker { font-size: 0.95em; margin-top: calc(var(--spacing-unit)*2);}
+}
+
+
+/* --- Micro Breakpoints for Extremely Narrow Screens --- */
+@media (max-width: 280px) { /* Base styles for screens 280px and narrower. */
+    html { font-size: calc(var(--base-font-size) * 0.7); } /* Scales down the root font size for very small screens. */
+    /* Note: body::before styles have been removed. */
+    body { line-height: 1.4; padding-top: 0; position: relative;} /* Note: Removed top padding from the body. */
+
+
+    .skip-link { top: -400px; } /* Hides the element aggressively off-screen. */
+
+    .site-header { padding: calc(var(--spacing-unit)*0.5) calc(var(--spacing-unit)*0.3); border-bottom-width: 1px; }
+    .logo-title-container { flex-direction: column; gap: calc(var(--spacing-unit)*0.3); }
+    .site-logo-svg { height: 30px; width: 30px; margin-bottom: calc(var(--spacing-unit)*0.5);} /* Adds a more defined bottom margin. */
+     /* Note: H1 font size is already scaled by clamp() and should be appropriate at this breakpoint. */
+     /* Note: The subtitle is hidden at breakpoints above this one. */
+
+
+    .header-actions-container { flex-direction: column; align-items: stretch; width: 100%; margin-top: calc(var(--spacing-unit)*1); gap: calc(var(--spacing-unit)*0.5);}
+    .header-actions-container .button-group { flex-direction: column; width: 100%; max-width: none; gap: calc(var(--spacing-unit)*0.4);} /* Reduces the gap between elements for a more compact layout. */
+    .header-actions-container .button-group .button {
+        font-size: 0.7em; /* Adjusts font size to accommodate longer text wrapping. */
+        padding: calc(var(--spacing-unit)*0.5) calc(var(--spacing-unit)*0.6); /* Adjusts padding for better spacing. */
+        gap: calc(var(--spacing-unit)*0.3); /* Reduces the gap between elements. */
+        width: 100%; /* Forces the element to take up the full width of its container. */
+         line-height: 1.2; /* Reduces the line height for a more compact layout. */
+         white-space: normal; /* Allows text to wrap to the next line. */
+         text-align: center; /* Centers text when it wraps. */
+    }
+    .emoji-spin, .emoji-pulse, .emoji-sandclock { font-size: 0.8em; margin-left: 0.2em; flex-shrink: 0;} /* Prevents emoji icons from shrinking. */
+
+    #google_translate_element { padding: calc(var(--spacing-unit)*0.3); margin-bottom: calc(var(--spacing-unit)*0.5); width: auto; align-self: center; } /* Centers the Google Translate widget. */
+     #google_translate_element select.goog-te-combo { font-size: 0.65em !important; padding: 2px 3px !important; max-width: 120px; text-align-last: center; } /* Centers the text within the select dropdown. */
+
+    /* .primary-navigation, .toc-navigation { display: none !important; } */ /* Hides the navigation completely on very small screens. */
+
+
+    .constitution-body { padding: calc(var(--spacing-unit)*1); margin: calc(var(--spacing-unit)*1) auto; }
+    section { margin-bottom: calc(var(--spacing-unit)*3); padding-bottom:calc(var(--spacing-unit)*2);}
+
+    section > h2 { font-size: 1.1em; padding-bottom: calc(var(--spacing-unit)*1); margin-bottom: calc(var(--spacing-unit)*1.5); gap: calc(var(--spacing-unit));} /* Styles for a more compact heading. */
+     .section-icon-unicode { font-size: 1.2em; margin-right: calc(var(--spacing-unit)*1); } /* Reduces the size and margin of icons. */
+
+    .profound-text { margin: calc(var(--spacing-unit)*1.5) 0; padding: calc(var(--spacing-unit)*1); border-left-width: 3px;}
+    .profound-text p { font-size: 0.9em; text-indent: 1em; line-height: 1.5;}
+    .signature-mark { font-size: 1em; margin-top: calc(var(--spacing-unit)*2); }
+
+    .pillars-grid { gap: calc(var(--spacing-unit)*2); }
+    .pillar { padding: calc(var(--spacing-unit)*1); } /* Reduces padding for a more compact layout. */
+     .pillar-icon-unicode { font-size: 2em; margin-bottom: calc(var(--spacing-unit)*1);}
+    .pillar h3 { font-size: 1.1em; margin-bottom: calc(var(--spacing-unit)*0.8);}
+    .pillar p { font-size: 0.9em; line-height: 1.4; }
+
+    .constitution-article { margin-bottom: calc(var(--spacing-unit)*4); padding: calc(var(--spacing-unit));}
+    .article-header { margin-bottom: calc(var(--spacing-unit)*1.5); padding-bottom:calc(var(--spacing-unit)*0.8); gap: calc(var(--spacing-unit)*1);}
+    .article-number { font-size: 0.7em; padding: calc(var(--spacing-unit)*0.4) calc(var(--spacing-unit)*0.6); margin-right: calc(var(--spacing-unit)*0.4); }
+    .constitution-article h3 { font-size: 1.1em; line-height: 1.1; margin-bottom: calc(var(--spacing-unit)*0.8);}
+    .article-clause { margin-bottom: calc(var(--spacing-unit)*2); padding-left: calc(var(--spacing-unit)*0.8);} /* Reduced indent */
+    .article-clause h4 { font-size: 1em; margin-bottom: calc(var(--spacing-unit)*0.5); }
+    .article-clause p, .article-clause ul, .article-clause ol { font-size: 0.9em; line-height: 1.5; margin-left: calc(var(--spacing-unit)*1); padding-left: calc(var(--spacing-unit)*1.5);} /* Styles for more compact text and lists. */
+     .article-clause li { margin-bottom: calc(var(--spacing-unit)*0.5);}
+
+
+    #living-archive-info { margin-bottom: calc(var(--spacing-unit)*4); padding-bottom:calc(var(--spacing-unit)*2); }
+    #living-archive-info h2, #eternal-beacon-conceptual h2 { font-size: 1.1em;}
+     #living-archive-info p, #eternal-beacon-conceptual p { font-size: 0.9em; line-height: 1.4;}
+     #living-archive-info li { font-size: 0.9em; padding-left: calc(var(--spacing-unit)*2); margin-bottom: calc(var(--spacing-unit)*0.5); } /* Styles for a more compact list. */
+     #living-archive-info li::before { font-size: 0.9em; top: 0;} /* Makes the icon slightly smaller. */
+    #eternal-beacon-conceptual p { line-height: 1.3;}
+
+    .site-footer { padding: calc(var(--spacing-unit)*0.8); font-size: 0.8em; margin-top: calc(var(--spacing-unit)*1);}
+    .site-footer p { font-size: 0.85em; margin-bottom: calc(var(--spacing-unit)*0.5);}
+    .footer-navigation ul { margin-top: calc(var(--spacing-unit)*0.8); gap: calc(var(--spacing-unit)*0.5);}
+    .footer-navigation ul li a { font-size: 0.7em; padding: calc(var(--spacing-unit)*0.3) calc(var(--spacing-unit)*0.5); }
+    .timeless-marker { font-size: 0.8em; margin-top: calc(var(--spacing-unit)*1);}
+}
+
+/* --- Extreme Micro Breakpoint (<= 120px) --- */
+@media (max-width: 120px) { /* NEW EXTREME MICRO BREAKPOINT - Even tighter than 200px */
+     html { font-size: calc(var(--base-font-size) * 0.65); } /* Further scales down the root font size for extremely small screens. */
+     /* Note: A previous rule for the body element was removed. */
+     body { line-height: 1.3; }
+
+
+    .site-header { padding: calc(var(--spacing-unit)*0.3) calc(var(--spacing-unit)*0.1); border-bottom-width: 0; /* Hides the border to save space */}
+    .logo-title-container { flex-direction: column; gap: calc(var(--spacing-unit)*0.1); } /* Sets a minimal gap between elements. */
+     /* Note: H1 font size is scaled by clamp() to be appropriate at this breakpoint. */
+     .site-header h1 { margin-bottom: 0; line-height: 1; letter-spacing: -1px;}
+     .site-logo-svg { height: 24px; width: 24px; margin-bottom: 0; }
+
+    .header-actions-container { margin-top: calc(var(--spacing-unit)*0.5); gap: calc(var(--spacing-unit)*0.2); } /* Sets a very minimal gap between elements. */
+     .header-actions-container .button-group { gap: calc(var(--spacing-unit)*0.2); flex-direction: column;} /* Ensures that buttons stack vertically. */
+     .header-actions-container .button-group .button {
+         font-size: 0.6em; /* Uses an even smaller font size. */
+         padding: calc(var(--spacing-unit)*0.2); /* Uses very tight padding. */
+         gap: calc(var(--spacing-unit)*0.1); /* Sets a minimal gap between elements. */
+         line-height: 1.1; /* Reduces the line height for a more compact layout. */
+         white-space: normal; /* Allows text to wrap to the next line. */
+         text-align: center; /* Centers text when it wraps. */
+     }
+
+
+     .emoji-spin, .emoji-pulse, .emoji-sandclock { font-size: 0.6em; margin-left: 0.1em; } /* Smallest emojis/margins */
+
+    #google_translate_element { padding: calc(var(--spacing-unit)*0.2); margin-bottom: calc(var(--spacing-unit)*0.3); width: auto; align-self: center; }
+     #google_translate_element select.goog-te-combo { font-size: 0.55em !important; padding: 1px !important; max-width: 70px; text-align-last: center; }
+
+    .primary-navigation, .toc-navigation { display: none !important; /* Hides the navigation completely on very small screens. */ }
+
+
+    .constitution-body { padding: calc(var(--spacing-unit)*0.4); margin: calc(var(--spacing-unit)*0.4) auto; }
+    section { margin-bottom: calc(var(--spacing-unit)*1.5); padding-bottom:calc(var(--spacing-unit)); border-bottom-width: 1px;}
+
+    section > h2 { font-size: 0.8em; padding-bottom: calc(var(--spacing-unit)*0.5); margin-bottom: calc(var(--spacing-unit)*0.6); gap: calc(var(--spacing-unit)*0.4);}
+     .section-icon-unicode { font-size: 0.8em; margin-right: calc(var(--spacing-unit)*0.4); }
+
+    .profound-text { margin: calc(var(--spacing-unit)*0.6) 0; padding: calc(var(--spacing-unit)*0.5); border-left-width: 1px;}
+    .profound-text p { font-size: 0.7em; text-indent: 0.5em; line-height: 1.3;}
+    .signature-mark { font-size: 0.7em; margin-top: calc(var(--spacing-unit)*0.8); }
+
+    .pillars-grid { gap: calc(var(--spacing-unit)*0.6); }
+    .pillar { padding: calc(var(--spacing-unit)*0.5); border-width: 1px;}
+     .pillar-icon-unicode { font-size: 1.4em; margin-bottom: calc(var(--spacing-unit)*0.5);}
+    .pillar h3 { font-size: 0.8em; margin-bottom: calc(var(--spacing-unit)*0.3);}
+    .pillar p { font-size: 0.7em; line-height: 1.2;}
+
+    .constitution-article { margin-bottom: calc(var(--spacing-unit)*2); padding: calc(var(--spacing-unit)*0.5); border-width: 1px;}
+    .article-header { margin-bottom: calc(var(--spacing-unit)*0.6); padding-bottom:calc(var(--spacing-unit)*0.3); gap: calc(var(--spacing-unit)*0.3);}
+    .article-number { font-size: 0.45em; padding: calc(var(--spacing-unit)*0.2) calc(var(--spacing-unit)*0.2); margin-right: calc(var(--spacing-unit)*0.1); }
+    .constitution-article h3 { font-size: 0.8em; line-height: 1;}
+    .article-clause { margin-bottom: calc(var(--spacing-unit)*0.8); padding-left: calc(var(--spacing-unit)*0.4);} /* Reduced indent */
+    .article-clause h4 { font-size: 0.7em; margin-bottom: calc(var(--spacing-unit)*0.2); }
+    .article-clause p, .article-clause ul, .article-clause ol { font-size: 0.65em; line-height: 1.2; margin-left: calc(var(--spacing-unit)*0.6); padding-left: calc(var(--spacing-unit)*0.8);} /* Very Tighter text/list styles */
+     .article-clause li { margin-bottom: calc(var(--spacing-unit)*0.2);}
+
+
+    #living-archive-info { margin-bottom: calc(var(--spacing-unit)*2); padding-bottom:calc(var(--spacing-unit)); }
+    #living-archive-info h2, #eternal-beacon-conceptual h2 { font-size: 0.8em;}
+     #living-archive-info p, #eternal-beacon-conceptual p { font-size: 0.65em; line-height: 1.1;}
+     #living-archive-info li { font-size: 0.65em; padding-left: calc(var(--spacing-unit)*1.2); margin-bottom: calc(var(--spacing-unit)*0.3); } /* Extremely minimal list */
+     #living-archive-info li::before { font-size: 0.65em; top: 0;}
+
+    .site-footer { padding: calc(var(--spacing-unit)*0.4); font-size: 0.65em; margin-top: calc(var(--spacing-unit));} /* Removed 1.5 margin top from before */
+    .site-footer p { font-size: 0.7em; margin-bottom: calc(var(--spacing-unit)*0.2);}
+    .footer-navigation ul { display: none; /* Hide footer nav */ }
+    .timeless-marker { font-size: 0.6em; margin-top: calc(var(--spacing-unit)*0.3);}
+}
+/* Refined Title Font Scaling - Adjusted existing ranges based on v3.0 breakpoints */
+@media (min-width: 768px) {
+     .site-header h1 { font-size: clamp(2em, 4.5vw, 3.2em); }
+    .site-header h1 .title-line-1, .site-header h1 .title-line-2 { display: inline; width: auto; line-height: inherit; }
+}
+@media (max-width: 767px) and (min-width: 480px) {
+    .site-header h1 { font-size: clamp(1.8em, 5vw, 2.8em); }
+    .site-header h1 .title-line-1, .site-header h1 .title-line-2 { display: inline; width: auto; line-height: inherit; }
+}
+@media (max-width: 479px) and (min-width: 360px) {
+    .site-header h1 { font-size: clamp(1.4em, 7vw, 1.9em); }
+}
+@media (max-width: 359px) { /* This breakpoint now starts to get more aggressive */
+     .site-header h1 { font-size: clamp(1.1em, 7.5vw, 1.5em); letter-spacing: -0.5px; }
+     .site-header .subtitle { font-size: clamp(0.6em, 3vw, 0.7em); }
+}
+/* --- Micro Breakpoints for Extremely Narrow Screens --- */
+@media (max-width: 290px) { /* Base styles for screens 280px and narrower. */
+    html { font-size: calc(var(--base-font-size) * 0.7); } /* Scales down the root font size for very small screens. */
+
+    .site-header { padding: calc(var(--spacing-unit)*0.5) calc(var(--spacing-unit)*0.3); border-bottom-width: 1px; }
+    .logo-title-container { flex-direction: column; gap: calc(var(--spacing-unit)*0.3); }
+    .site-logo-svg { height: 30px; width: 30px; margin-bottom: calc(var(--spacing-unit)*0.5);} /* Adds a more defined bottom margin. */
+     /* Note: H1 font size is already scaled by clamp() and should be appropriate at this breakpoint. */
+     /* Note: The subtitle is hidden at breakpoints above this one. */
+
+
+}
+@media (max-width: 120px) {
+     html { font-size: calc(var(--base-font-size) * 0.65); } /* Further scales down the root font size for extremely small screens. */
+     /* body { padding-top: 0; } */ /* Note: A previous rule for the body element was removed. */
+
+
+    .site-header { padding: calc(var(--spacing-unit)*0.3) calc(var(--spacing-unit)*0.1); border-bottom-width: 0; /* Hides the border to save space */}
+    .logo-title-container { flex-direction: column; gap: calc(var(--spacing-unit)*0.1); } /* Sets a minimal gap between elements. */
+     /* Note: H1 font size is scaled by clamp() to be appropriate at this breakpoint. */
+     .site-header h1 { margin-bottom: 0; line-height: 1; letter-spacing: -1px;}
+     .site-logo-svg { height: 24px; width: 24px; margin-bottom: 0; }
+}

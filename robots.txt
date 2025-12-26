@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://chyrenselin.github.io/Satya-Yuga-Bhumi-Trust-DAO/sitemap.xml

@@ -1,0 +1,72 @@
+/* --- Constitution Articles Styling --- */
+.constitution-article {
+    margin-bottom: calc(var(--spacing-unit) * 7); padding: calc(var(--spacing-unit) * 2.5);
+    border: 1.5px solid var(--color-border-subtle); /* Default border for article containers. */
+    border-radius: var(--border-radius);
+    background-color: #fff; /* Ensures articles have a clean, white background. */
+    transition: box-shadow var(--transition-speed-subtle) var(--transition-easing), border-color var(--transition-speed-subtle) var(--transition-easing);
+}
+.constitution-article:hover {
+    box-shadow: var(--shadow-profound);
+    border-color: var(--color-accent-secondary);
+}
+
+.article-header {
+    display: flex; align-items: baseline;
+    gap: calc(var(--spacing-unit) * 2);
+    margin-bottom: calc(var(--spacing-unit) * 3);
+    border-bottom: 1.5px solid var(--color-accent-primary);
+    padding-bottom: calc(var(--spacing-unit) * 2);
+}
+.article-number {
+    font-family: var(--font-ui); font-size: 0.95em; font-weight: 600;
+    color: var(--color-header-bg); /* Style for text on a colored background, ensuring contrast. */
+    background-color: var(--color-accent-primary); /* Uses the primary accent color for emphasis. */
+    padding: calc(var(--spacing-unit)*0.6) calc(var(--spacing-unit)*1.5);
+    border-radius: var(--border-radius);
+    white-space: nowrap; box-shadow: var(--shadow-ethereal); line-height: 1.3;
+    margin-right: calc(var(--spacing-unit) * 0.75);
+}
+.constitution-article h3 { /* Styling for the main title of each article. */
+    font-family: var(--font-heading-alt); font-size: 1.7em; font-weight: 500;
+    color: var(--color-text-primary); line-height: 1.35;
+}
+.article-clause { margin-bottom: calc(var(--spacing-unit) * 3.5); padding-left: calc(var(--spacing-unit) * 1.5); }
+.article-clause h4 { font-family: var(--font-ui); font-size: 1.25em; font-weight: 600; margin-bottom: calc(var(--spacing-unit) * 1.25); }
+.article-clause p, .article-clause ul, .article-clause ol {
+    font-size: 1.1em; /* Increases font size for better readability of article content. */
+    margin-left: calc(var(--spacing-unit) * 3);
+    line-height: 1.9; /* Improves text legibility by increasing space between lines. */
+}
+.article-clause ul, .article-clause ol { padding-left: calc(var(--spacing-unit) * 3.5); }
+.article-clause li { margin-bottom: calc(var(--spacing-unit)*1.25); }
+
+/* --- Living Archive & Eternal Beacon Section --- */
+#living-archive-info ul { list-style: none; padding-left: 0; /* Resets default list padding. */ }
+#living-archive-info li {
+    font-family: var(--font-ui); font-size: 1.05em;
+    padding-left: calc(var(--spacing-unit) * 3); /* Uses padding to create consistent indentation. */
+    position: relative; margin-bottom: var(--spacing-unit);
+}
+#living-archive-info li::before {
+    content: '💎'; /* Decorative icon for list items, can be customized. */
+    position: absolute; left: 0; top: 1px;
+    color: var(--color-accent-secondary); font-size: 1.1em;
+}
+#living-archive-info a, #eternal-beacon-conceptual a { font-weight: 500; }
+#eternal-beacon-conceptual {
+    margin-bottom: calc(var(--spacing-unit)*8);
+    padding-bottom: calc(var(--spacing-unit)*6);
+    border-bottom: 1.5px dashed var(--color-border-subtle);
+}
+#eternal-beacon-conceptual h2 {
+    padding-bottom: calc(var(--spacing-unit) * 2.5);
+    border-bottom: 2.5px solid var(--color-accent-primary);
+    color: var(--color-accent-secondary);
+    margin-bottom: calc(var(--spacing-unit) * 3);
+}
+#eternal-beacon-conceptual .section-icon-unicode {
+     margin-right: calc(var(--spacing-unit)*2.5); font-size: 1.8em;
+    color: var(--color-accent-primary); opacity: 0.85; line-height: 1;
+}
+#eternal-beacon-conceptual p { font-family: var(--font-code-symbolic); color: var(--color-text-secondary); font-size: 1.05em; font-style: italic; max-width: 80ch; margin: 0 auto calc(var(--spacing-unit)*1.5) auto; line-height: 1.7;}

@@ -1,0 +1,57 @@
+/* --- FAQ Page Specific Styles --- */
+
+/* Defines the main container for the list of FAQ items. */
+.faq-container {
+    max-width: 800px; /* Sets a maximum width for readability. */
+    margin: 2rem auto; /* Centers the container on the page and adds vertical spacing. */
+}
+
+/* Styles for a single FAQ item (a question and its answer). */
+.faq-item {
+    border-bottom: 1px solid var(--color-border); /* Adds a separator line below each item. */
+    margin-bottom: 1.5rem; /* Adds space between FAQ items. */
+}
+
+/* Styles for the clickable question part of the accordion. */
+.faq-question {
+    font-family: var(--font-headings); /* Uses the heading font variable. */
+    font-size: 1.25rem;
+    font-weight: 700;
+    cursor: pointer; /* Changes the cursor to a pointer to indicate it's clickable. */
+    padding: 1rem 0; /* Adds vertical padding. */
+    display: flex; /* Uses flexbox to align the text and the '+' icon. */
+    justify-content: space-between; /* Pushes the text to the left and the icon to the right. */
+    align-items: center; /* Centers the text and icon vertically. */
+}
+
+/* Creates the '+' icon using a pseudo-element. */
+.faq-question::after {
+    content: '+'; /* The character used for the icon. */
+    font-size: 1.5rem;
+    color: var(--color-primary); /* Uses the primary color variable. */
+    /* Smoothly transitions the transform property (the rotation). */
+    transition: transform var(--transition-speed) ease-in-out;
+}
+
+/* Styles for the icon when the accordion item is active (open). */
+/* This rule targets the icon only when the parent .faq-item has the 'active' class. */
+.faq-item.active .faq-question::after {
+    /* Rotates the '+' by 45 degrees to turn it into an '×' (a cross). */
+    transform: rotate(45deg);
+}
+
+/* Styles for the answer panel of the accordion. */
+.faq-answer {
+    /* The core of the accordion effect: by default, the answer is collapsed. */
+    max-height: 0;
+    overflow: hidden; /* Hides any content that overflows the 0-height container. */
+    /* Smoothly transitions the max-height property, creating the slide-down/up animation. */
+    /* JavaScript will change max-height to a specific value to expand it. */
+    transition: max-height var(--transition-speed) ease-in-out;
+}
+
+/* Adds padding to the content inside the answer panel. */
+/* This ensures there is space below the text when the panel is open. */
+.faq-answer p, .faq-answer ul {
+    padding-bottom: 1.5rem;
+}

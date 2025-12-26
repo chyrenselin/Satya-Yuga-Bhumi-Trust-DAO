@@ -1,0 +1,54 @@
+/* --- "About Granth" Section Styling --- */
+
+/* Styles for the main container of the "About" section. */
+.about-granth {
+    /* Applies a fadeIn animation lasting 1 second, with an ease-out timing function,
+       a delay of 0.4s, and a 'backwards' fill mode, which means the element
+       will start in the 'from' state of the animation (e.g., opacity: 0) before it begins. */
+    animation: fadeIn 1s ease-out 0.4s backwards;
+    /* Responsive bottom margin: minimum of 2.5rem, scales with 7% of viewport height, maximum of 4.5rem. */
+    margin-bottom: clamp(2.5rem, 7vh, 4.5rem);
+}
+
+/* Styles for the main content box within the "About" section. */
+.about-content-box {
+    max-width: 780px; /* Limits the width for better readability on large screens. */
+    margin: 0 auto; /* Centers the box horizontally. */
+    /* Responsive padding. */
+    padding: clamp(1.8rem, 4.5vw, 2.8rem);
+    background: #ffecb3; /* A soft, parchment-like background color. */
+    border-radius: 8px; /* Slightly rounded corners. */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2); /* A subtle drop shadow for depth. */
+    text-align: left; /* Aligns text to the left, overriding any parent center alignment. */
+    color: #3e2723; /* A dark brown text color for contrast against the light background. */
+    border: 2px solid #a1887f; /* An earthy-toned border. */
+}
+
+/* Styles for the heading within the content box. */
+.about-content-box h3 {
+    color: #D2691E; /* A distinct, warm color for the heading. */
+    /* Responsive font size. */
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    margin-bottom: 1.3rem;
+    display: flex; /* Uses flexbox to align the icon and text. */
+    align-items: center; /* Vertically aligns the icon with the text. */
+    font-weight: 700;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1); /* A very subtle shadow to lift the text. */
+}
+
+/* Creates a decorative scroll icon before the h3 heading text. */
+.about-content-box h3::before {
+    content: '📜'; /* The scroll emoji character. */
+    margin-right: 0.8rem; /* Adds space between the icon and the text. */
+    /* Responsive font size for the icon. */
+    font-size: clamp(1.6rem, 3.2vw, 2.1rem);
+    line-height: 1; /* Ensures consistent line height. */
+    opacity: 0.85; /* Makes the icon slightly transparent. */
+}
+
+/* Styles for the paragraphs within the content box. */
+.about-content-box p {
+    line-height: 1.95; /* A generous line height for excellent readability. */
+    /* Responsive font size for the paragraph text. */
+    font-size: clamp(1.02rem, 1.9vw, 1.18rem);
+}

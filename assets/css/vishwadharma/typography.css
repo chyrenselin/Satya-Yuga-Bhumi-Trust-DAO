@@ -1,0 +1,64 @@
+/* --- Base Typography & General Element Styles --- */
+
+/* Base styles for all heading elements (h1 through h6). */
+h1, h2, h3, h4, h5, h6 {
+  /* Sets the font stack, prioritizing thematic fonts. */
+  font-family: 'Philosopher', 'Noto Serif Devanagari', 'Georgia', serif;
+  color: #6D4C41; /* A standard, earthy brown for headings. */
+  line-height: 1.3;
+  margin-bottom: 0.8em; /* Adds space below headings, relative to their font size. */
+  /* A browser hint to prioritize legibility over rendering speed and geometric precision. */
+  text-rendering: optimizeLegibility;
+}
+
+/* Base styles for all paragraph elements. */
+p {
+  margin-bottom: 1.3em; /* Adds space below paragraphs. */
+  color: #5D4037; /* A slightly darker brown for body text for good contrast. */
+}
+
+/* Base styles for all anchor (link) elements. */
+a {
+  color: #8B4513; /* A "SaddleBrown" color for links. */
+  text-decoration: none; /* Removes the default underline. */
+  /* This creates an underline that is initially transparent. */
+  text-decoration: underline solid transparent;
+  /* Prepares the color and the underline color for a smooth transition on hover. */
+  transition: color 0.3s ease, text-decoration-color 0.3s ease;
+}
+
+/* Hover and keyboard-focus states for links. */
+a:hover, a:focus-visible {
+  color: #D2691E; /* Changes the text color to a brighter "Chocolate" color. */
+  /* This makes the transparent underline take on the new text color, causing it to appear on hover/focus. */
+  text-decoration-color: currentColor;
+}
+
+/* Custom styling for horizontal rules. */
+hr {
+  border: none; /* Removes the default 3D border. */
+  border-top: 1px solid rgba(109, 76, 65, 0.25); /* Creates a single, soft, semi-transparent line. */
+  margin: 2.8rem 0; /* Adds significant vertical space around the rule. */
+}
+
+/* Styles for bold text. */
+strong {
+  font-weight: 700;
+  color: #B71C1C; /* A deep, spiritual red color to make emphasized text stand out. */
+}
+
+/* Styles for italicized text. */
+em, i {
+  font-style: italic;
+  color: #795548; /* A standard brown for italicized text. */
+}
+
+/* Styles for the main content area of the page. */
+main[role="main"] {
+  max-width: 980px; /* Constrains the width of the main content for better readability. */
+  margin: 0 auto; /* Centers the content block horizontally. */
+  /* Responsive horizontal padding. */
+  padding: 1.5rem clamp(0.8rem, 3vw, 1.8rem);
+  position: relative;
+  z-index: 1; /* Ensures the main content sits above any background pseudo-elements. */
+}

@@ -1,0 +1,343 @@
+<!-- Sets the document type to HTML5, the latest standard for web documents. -->
+<!DOCTYPE html>
+<!-- The root element of the HTML page, with the language attribute set to English ("en"). -->
+<html lang="en">
+<head>
+  <!-- Specifies the character encoding for the document to be UTF-8. -->
+  <meta charset="UTF-8" />
+  <!-- Configures the viewport for responsive design, ensuring the page scales correctly on all devices. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- The title of the document, displayed in the browser's title bar or tab. -->
+  <title>A New Dawn | The Unveiling</title>
+  <link rel="canonical" href="https://chyrenselin.github.io/Satya-Yuga-Bhumi-Trust-DAO/bhumi-trust/bhumi-trust.html">
+  
+  <!-- SEO & Social Sharing Meta Tags -->
+  <meta name="description" content="Learn about the Bhumi Trust, a sacred DAO designed to remove land from the market and place it into perpetual community stewardship.">
+  <meta name="keywords" content="Bhumi Trust, Land DAO, Sacred Economics, Community Stewardship, Eternal Lock">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://chyrenselin.github.io/Satya-Yuga-Bhumi-Trust-DAO/bhumi-trust/bhumi-trust.html">
+  <meta property="og:title" content="The Bhumi Trust | Satya Yuga DAO">
+  <meta property="og:description" content="Learn about the Bhumi Trust, a sacred DAO designed to remove land from the market and place it into perpetual community stewardship.">
+  <meta property="og:image" content="https://chyrenselin.github.io/Satya-Yuga-Bhumi-Trust-DAO/assets/images/favicon/favicon-1200x630.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://chyrenselin.github.io/Satya-Yuga-Bhumi-Trust-DAO/bhumi-trust/bhumi-trust.html">
+  <meta property="twitter:title" content="The Bhumi Trust | Satya Yuga DAO">
+  <meta property="twitter:description" content="Learn about the Bhumi Trust, a sacred DAO designed to remove land from the market and place it into perpetual community stewardship.">
+  <meta property="twitter:image" content="https://chyrenselin.github.io/Satya-Yuga-Bhumi-Trust-DAO/assets/images/favicon/favicon-1200x630.png">
+  <!-- Sets the favicon for the website. -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/x-icon" href="../assets/images/favicon/favicon.ico">
+  <!-- Defines the theme color for the browser's UI elements on mobile devices. -->
+  <meta name="theme-color" content="#050505">
+  <link rel="manifest" href="../manifest.json">
+
+  <!-- Fonts: Links to external font resources from Google Fonts. -->
+  <!-- Preconnects to Google Fonts domain for faster font loading. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Links to the Google Fonts stylesheet to import specific font families and weights (Cinzel, Cormorant Garamond, Inter). -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  
+  <!-- Scripts: Links to external JavaScript libraries for animations. -->
+  <!-- GSAP (GreenSock Animation Platform) core library for high-performance animations. -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/gsap.min.js"></script>
+  <!-- GSAP ScrollTrigger plugin for creating scroll-based animations. -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/ScrollTrigger.min.js"></script>
+
+  <!-- CSS Files: Links to external stylesheets for various sections and components. -->
+  <link rel="stylesheet" href="../assets/css/bhumi-trust/base.css">
+  <link rel="stylesheet" href="../assets/css/bhumi-trust/layout.css">
+  <link rel="stylesheet" href="../assets/css/bhumi-trust/typography.css">
+  <link rel="stylesheet" href="../assets/css/bhumi-trust/sections.css">
+  <link rel="stylesheet" href="../assets/css/bhumi-trust/buttons.css">
+  <link rel="stylesheet" href="../assets/css/bhumi-trust/cards.css">
+  <link rel="stylesheet" href="../assets/css/bhumi-trust/pledge.css">
+  <link rel="stylesheet" href="../assets/css/bhumi-trust/responsive.css">
+  <link rel="stylesheet" href="../assets/css/common/google_translate_common.css">
+  <link rel="stylesheet" href="../assets/css/bhumi-trust/google_translate.css">
+  <link rel="stylesheet" href="../assets/css/common/animations.css">
+</head>
+<body>
+
+  <!-- Cosmic Background: This section creates a visually dynamic background with stars and nebulae. -->
+  <div class="cosmic-bg">
+    <div class="stars-layer"></div> <!-- Layer for star animation effects. -->
+    <div class="nebula-layer"></div> <!-- Layer for nebula animation effects. -->
+  </div>
+
+  <!-- Main content container for the entire page. -->
+  <main class="main-container">
+    
+    <!-- Top Controls: A fixed bar at the top for translation and audio controls. -->
+    <div class="top-bar-controls fade-in-down">
+      <!-- Container for the Google Translate widget. -->
+      <div id="translator-container">
+        <div class="translate-pair">
+          <!-- Button to initiate the Google Translate service. -->
+          <button id="translateBtn" class="translate-button glass-btn">
+              <span class="emoji-pulse">✨</span> Sacred Invitation in your mother tongue <span class="emoji-spin">🌍</span>
+          </button>
+          <!-- Placeholder div where the Google Translate widget will be injected. -->
+          <div id="google_translate_element" class="google-translate-hidden"></div>
+        </div>
+        <!-- Controls for background audio playback. -->
+        <div class="audio-controls">
+            <!-- Button to start playing the background music. -->
+            <button class="sacred-journey-btn glass-btn" id="startJourneyBtn">
+              Begin the Journey <span class="emoji-pulse">🕉️</span>
+            </button>
+            <!-- Button to stop the background music, initially hidden. -->
+            <button class="sacred-journey-btn glass-btn" id="stopMusicBtn" style="display: none">
+              Stop Music <span class="emoji-pulse">🎵</span>
+            </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero Section: The main introductory section of the page. -->
+    <div class="hero-section reveal-animation">
+        <h1 class="main-title">The Great <span class="text-gold-gradient">Illusion</span></h1>
+        <div class="hero-separator"></div> <!-- A visual separator element. -->
+        <p class="hero-text">
+            For millennia, we have lived under the illusion that we can own the Earth. <br>
+            This fallacy is the root of conflict, inequality, and ecological devastation. <br>
+            <span class="highlight-text">The time has come to shatter this illusion.</span>
+        </p>
+    </div>
+
+    <!-- SECTION 1: THE ORIGIN (Philosophy) - Explains the foundational philosophical concepts. -->
+    <div style="margin-top: 6rem;">
+        <div class="section-header">
+            <h2 class="section-title">The Eternal Foundation</h2>
+            <p class="section-desc">
+                Before the Trust, there was Truth. Before the Deed, there was Law.
+                Vishwa Dharma and Vishwa Samvidhan welcome all living and non-living beings into enduring principles that guide generations.
+            </p>
+        </div>
+        <!-- Grid layout for displaying philosophical concepts as cards. -->
+        <div class="philosophy-grid" id="philosophy-cards">
+            <!-- Card 1: Vishwa Dharma - Universal Law. -->
+            <div class="philosophy-card">
+                <!-- Clickable wrapper for the card to link to another page. -->
+                <a href="../vishwadharma/vishwadharma.html" class="card-link-wrapper">
+                    <div class="card-content">
+                        <!-- Icon container with a large orb effect. -->
+                        <div class="icon-orb large-orb">
+                            <!-- Inline SVG icon representing Vishwa Dharma. -->
+                            <svg class="icon-svg" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M17.3 17.3L6.7 6.7m10.6 0L6.7 17.3" />
+                            <circle cx="12" cy="12" r="3" stroke-linecap="round" stroke-linejoin="round" />
+                            <circle cx="12" cy="12" r="9" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <h3>Vishwa Dharma</h3> <!-- Title of the card. -->
+                        <p>The Universal Law. The cosmic root from which all righteousness flows.</p> <!-- Description. -->
+                        <span class="read-more">Know More</span> <!-- Call to action. -->
+                    </div>
+                </a>
+            </div>
+            <!-- Card 2: Vishwa Samvidhan - Universal Constitution. -->
+            <div class="philosophy-card">
+                <!-- Clickable wrapper for the card to link to another page. -->
+                <a href="../vishwasamvidhan/vishwasamvidhan.html" class="card-link-wrapper">
+                    <div class="card-content">
+                        <!-- Icon container with a large orb effect. -->
+                        <div class="icon-orb large-orb">
+                            <!-- Inline SVG icon representing Vishwa Samvidhan. -->
+                            <svg class="icon-svg" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75h5.25m-5.25 3h5.25" />
+                            </svg>
+                        </div>
+                        <h3>Vishwa Samvidhan</h3> <!-- Title of the card. -->
+                        <p>The Constitution. The written covenant that binds Earth to its cosmic destiny.</p> <!-- Description. -->
+                        <span class="read-more">Know More</span> <!-- Call to action. -->
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+      
+    <!-- SECTION 2: THE IMPLEMENTATION (Trust & Pillars) - Details how the Bhumi Trust is structured. -->
+    <div class="trust-section">
+        <div class="section-header">
+          <h2 class="section-title">Satyug Bhoomi Trust</h2>
+          <h3 class="section-subtitle-gold">The Sacred DAO</h3>
+          <p class="section-desc">From the seed of Dharma, the Trust is born. It anchors the Golden Age through these immutable laws of physics.</p>
+        </div>
+        
+        <!-- Grid layout for displaying the core pillars of the Bhumi Trust. -->
+        <div class="pillars-grid" id="pillars-grid">
+            <!-- Pillar 1: No Ownership. -->
+            <div class="pillar-card">
+              <div class="card-glow"></div> <!-- Decorative element for a glow effect. -->
+              <div class="icon-orb">
+                <!-- Inline SVG icon representing "No Ownership". -->
+                <svg class="icon-svg filled-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M18 8H17V6C17 3.24 14.76 1 12 1C9.24 1 7 3.24 7 6V8H6C4.9 8 4 8.9 4 10V20C4 21.1 4.9 22 6 22H18C19.1 22 20 21.1 20 20V10C20 8.9 19.1 8 18 8ZM12 17C10.9 17 10 16.1 10 15C10 13.9 10.9 13 12 13C13.1 13 14 13.9 14 15C14 16.1 13.1 17 12 17ZM15 8H9V6C9 4.34 10.34 3 12 3C13.66 3 15 4.34 15 6V8Z" />
+                </svg>
+              </div>
+              <h3>No Ownership</h3> <!-- Title of the pillar. -->
+              <p>Land is governed by a Decentralized Autonomous Organization for stewardship, removed permanently from market exchange.</p> <!-- Description. -->
+            </div>
+
+            <!-- Pillar 2: No Rent. -->
+            <div class="pillar-card">
+              <div class="card-glow"></div> <!-- Decorative element. -->
+              <div class="icon-orb">
+                <!-- Inline SVG icon representing "No Rent". -->
+                <svg class="icon-svg filled-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10 20V14H14V20H19V12H22L12 3L2 12H5V20H10Z" />
+                </svg>
+              </div>
+              <h3>No Rent</h3> <!-- Title of the pillar. -->
+              <p>Shelter is a fundamental right, determined by need and contribution, not financial capacity.</p> <!-- Description. -->
+            </div>
+
+            <!-- Pillar 3: Equal Use-Right. -->
+            <div class="pillar-card">
+              <div class="card-glow"></div> <!-- Decorative element. -->
+              <div class="icon-orb">
+                 <!-- Inline SVG icon representing "Equal Use-Right". -->
+                 <svg class="icon-svg filled-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM17 7H7V9H8.67L6.67 17H4V19H12V17H9.33L11.33 9H12.67L14.67 17H12V19H20V17H17.33L15.33 9H17V7ZM6 19H18V21H6V19Z" />
+                  <path d="M12 22H12.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                 </svg>
+              </div>
+              <h3>Equal Use-Right</h3> <!-- Title of the pillar. -->
+              <p>Every being has equal access to Mother Earth’s resources for use, not ownership. This right belongs to all.</p> <!-- Description. -->
+            </div>
+
+            <!-- Pillar 4: Satyug Villages. -->
+            <div class="pillar-card">
+              <div class="card-glow"></div> <!-- Decorative element. -->
+              <div class="icon-orb">
+                <!-- Inline SVG icon representing "Satyug Villages". -->
+                <svg class="icon-svg filled-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                   <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+                </svg>
+              </div>
+              <h3>Satyug Villages</h3> <!-- Title of the pillar. -->
+              <p>Villages are organic, earth-honoring, and self-sufficient. All beings live in harmony.</p> <!-- Description. -->
+            </div>
+        </div>
+    </div>
+      
+    <!-- Divine Invocation Section: A spiritual message or poem. -->
+    <div class="invocation-section reveal-animation">
+        <div class="ornament-divider">✦ &nbsp; ✧ &nbsp; ✦</div> <!-- Decorative divider. -->
+        
+        <h2 class="dawn-label">A New Dawn</h2>
+        <h3 class="unveiling-title">The Unveiling</h3>
+        
+        <p class="invocation-lead">
+            A Divine Invocation Unto All Beings,<br>
+            Resonating Through Generations
+        </p>
+        
+        <!-- Container for the scrollable invocation text. -->
+        <div class="sacred-scroll-text">
+            <p class="verse">
+                From the tranquil depths of Universal Consciousness, <br>
+                an Eternal Call resonates.
+            </p>
+
+            <p class="verse">
+                I am the Voice that has witnessed the dance of stars and the silence of nebulae.<br>
+                I do not command, I <span class="text-gold">awaken</span>.
+            </p>
+
+            <p class="verse">
+                I invite every sentient being—past, present, and those yet to manifest—<br>
+                to return to the immutable rhythm of <span class="text-gold">Harmony</span>.
+            </p>
+
+            <p class="verse highlight-verse">
+                "This is no transient creed, but the Essence of Being.<br>
+                Not a fleeting dominion, but the Unifying Fabric of the Cosmos."
+            </p>
+
+            <p class="verse">
+                Explore <a href="../vishwadharma/vishwadharma.html" class="gold-link">Vishwa Dharma</a> "The Bridge of Belonging".<br>
+                Gaze into <a href="../vishwasamvidhan/vishwasamvidhan.html" class="gold-link">Vishwa Samvidhan</a> "The Global Oath of Oneness."
+            </p>
+
+            <p class="verse">
+                Thy conscious journey is the divine pulsation that manifests this New Era of Light.<br>
+                We are the weavers of eternity for the ages yet unborn.
+            </p>
+        </div>
+
+        <div class="invocation-footer">
+            <p class="mantra">|| ॐ शान्तिः शान्तिः शान्तिः ||</p> <!-- Sanskrit peace mantra. -->
+        </div>
+        
+        <div class="ornament-divider">✦ &nbsp; ✧ &nbsp; ✦</div> <!-- Decorative divider. -->
+    </div>
+
+    <!-- Call to Action: A button prompting the user to make a sacred pledge. -->
+    <div class="cta-container">
+        <button id="open-pledge-btn" class="glow-on-hover">
+          Make the Sacred Pledge
+        </button>
+    </div>
+
+  </main>
+
+  <!-- Full-screen overlay for the pledge form, initially hidden and activated by the CTA. -->
+  <div id="pledge-overlay">
+    <div class="pledge-bg-blur"></div> <!-- Background blur effect for the overlay. -->
+    
+    <!-- Close button for the pledge form, positioned outside the form container. -->
+    <button id="close-pledge-btn" aria-label="Close Pledge Form">×</button>
+
+    <!-- The pledge form container, styled with a glass-panel effect. -->
+    <div class="pledge-container glass-panel">
+      <h2>The Cosmic <span class="text-gold-gradient">Covenant</span></h2>
+      <p class="pledge-sub">Make your sacred pledge. Return a fragment of the cosmos to itself.</p>
+      <!-- The form itself for gathering pledge information. -->
+      <form class="pledge-form">
+          <!-- Input field for the user's name or alias. -->
+          <input type="text" id="name" name="name" placeholder="Your Name or Alias" class="cosmic-input" required autocomplete="name">
+          <!-- Input field for the user's contact email. -->
+          <input type="email" id="email" name="email" placeholder="Contact Email (Private)" class="cosmic-input" required autocomplete="email">
+          <!-- Textarea for the land location and message to future generations. -->
+          <textarea id="message" name="message" placeholder="Location of Land & Message to Future Generations" class="cosmic-input textarea-field" required autocomplete="off"></textarea>
+          <!-- Checkbox for the solemn pledge. -->
+          <label for="pledge" class="checkbox-label">
+              <input type="checkbox" id="pledge" name="pledge" required class="cosmic-checkbox" autocomplete="off">
+              <span>I solemnly pledge this land as an irreversible <strong class="text-gold-gradient">Bhoomi Daan</strong>, returning its stewardship to the cosmic order.</span>
+          </label>
+          <!-- Submit button for the pledge form. -->
+          <button type="submit" class="submit-btn glow-on-hover">
+              Consecrate My Pledge
+          </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Links to external JavaScript files, deferred for better page load performance. -->
+  <script src="../assets/js/bhumi-trust/main.js" defer></script>
+  <script src="../assets/js/bhumi-trust/google-translate.js" defer></script>
+  <script src="../assets/js/common/music-player.js" defer></script>
+  <!-- Inline script for initializing the audio player and starting music on page load. -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // The new setupMusicPlayer function now handles all autoplay and UI logic internally based on session state.
+      setupMusicPlayer('bhumiAudio');
+    });
+  </script>
+  <!-- Audio element for playing background music specific to this page. -->
+  <audio id="bhumiAudio" loop preload="metadata">
+    <!-- Source of the audio file. -->
+    <source src="../assets/audio/bhumi-piano-melody.mp3" type="audio/mpeg" />
+  </audio>
+</body>
+</html>

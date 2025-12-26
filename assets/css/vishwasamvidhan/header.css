@@ -1,0 +1,60 @@
+/* --- Header Styles --- */
+.site-header {
+    background-image: var(--gradient-header-cosmic);
+    color: var(--color-header-text);
+    padding: calc(var(--spacing-unit) * 3) calc(var(--spacing-unit) * 3.5);
+    border-bottom: 7px solid var(--color-accent-primary);
+    box-shadow: 0 5px 15px rgba(10,25,47,0.25);
+    position: relative;
+    top: 0; /* Ensures the header stays at the top of the viewport. */
+    z-index: 100;
+}
+.site-header .header-content {
+    max-width: var(--header-max-width); margin: 0 auto;
+    display: flex;
+    align-items: center; /* Aligns header items vertically. */
+    gap: calc(var(--spacing-unit) * 3.5);
+    flex-wrap: wrap; /* Allows header content to wrap on smaller screens. */
+    justify-content: center; /* Centers header content when it wraps to a new line. */
+    text-align: center; /* Centers the header text. */
+}
+.logo-title-container {
+    display: flex; align-items: center;
+    gap: calc(var(--spacing-unit) * 3);
+    flex-grow: 1; min-width: 0; /* Allows the container to shrink to fit available space. */
+    width: 100%; /* Ensures the container takes the full width when wrapped. */
+    justify-content: center; /* Centers the logo and title within their container. */
+    margin-bottom: calc(var(--spacing-unit) * 2); /* Adds spacing below the container when items are stacked. */
+}
+.site-logo-svg {
+    height: clamp(60px, 8vw, 85px); width: clamp(60px, 8vw, 85px);
+    flex-shrink: 0; filter: drop-shadow(0 3px 5px rgba(0,0,0,0.4));
+}
+.site-header h1 {
+    color: var(--color-header-text); margin: 0;
+    letter-spacing: 0.5px; text-shadow: 1.5px 1.5px 4px rgba(0,0,0,0.3);
+    font-weight: 700;
+    font-size: clamp(1.8em, 3.5vw, 3.4em); /* Responsive font size with a less aggressive scaling factor. */
+}
+.site-header h1 .title-line-1,
+.site-header h1 .title-line-2 {
+    display: block; width: 100%;
+    line-height: 1.2;
+}
+
+.site-header .title-container { min-width: 0; }
+
+.header-actions-container {
+    font-family: var(--font-ui); display: flex; align-items: center;
+    gap: calc(var(--spacing-unit) * 2.5); flex-shrink: 0;
+    margin-left: auto; /* Pushes the container to the right when there is space. */
+    flex-wrap: wrap; /* Allows buttons to wrap on smaller screens. */
+    justify-content: center; /* Centers buttons when they wrap to a new line. */
+    width: 100%; /* Ensures the container takes the full width when wrapped. */
+    margin-top: calc(var(--spacing-unit)*2); /* Adds spacing above the container when it wraps. */
+    margin-left: 0; /* Removes the automatic margin when the container is wrapped and centered. */
+}
+.header-actions-container .button-group {
+    display: flex; align-items: center;
+    gap: calc(var(--spacing-unit) * 1.5);
+}

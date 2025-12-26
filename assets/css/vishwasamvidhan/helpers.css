@@ -1,0 +1,39 @@
+/* --- Accessibility & Helper Classes --- */
+.skip-link {
+    position: absolute;
+    top: -300px; /* Hides the skip link off-screen by default. */
+    left: 50%;
+    transform: translateX(-250%);
+    background-color: var(--color-background-deep-space);
+    color: var(--color-header-bg); /* Sets text color for contrast against the background. */
+    padding: calc(var(--spacing-unit) * 1.5) calc(var(--spacing-unit) * 3);
+    z-index: 99999;
+    text-decoration: none;
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+    transition: top 0.3s var(--transition-easing);
+    box-shadow: var(--shadow-profound);
+    font-family: var(--font-ui);
+    font-weight: 500;
+}
+.skip-link:focus { top: 0; }
+
+:focus-visible {
+    outline: 3.5px solid var(--color-accent-primary-glow); /* Uses a bright color to highlight focused elements. */
+    outline-offset: 3px;
+    box-shadow: 0 0 0 4px var(--color-focus-ring);
+    border-radius: var(--border-radius);
+}
+body:not(.using-keyboard) :focus:not(:focus-visible) {
+    outline: none;
+    box-shadow: none;
+}
+.placeholder-text {
+    font-style: italic;
+    color: var(--color-text-secondary);
+    text-align: center;
+    padding: calc(var(--spacing-unit) * 3);
+    border: 1px dashed var(--color-border-subtle);
+    margin: calc(var(--spacing-unit) * 2) auto; /* Centers the element and adds vertical margin. */
+    max-width: 60ch; /* Sets a maximum width for readability. */
+    border-radius: var(--border-radius);
+}

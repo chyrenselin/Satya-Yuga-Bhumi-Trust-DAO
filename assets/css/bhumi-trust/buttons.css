@@ -1,0 +1,106 @@
+/* --- General "Glassmorphic" Button Style --- */
+/* This class creates a translucent button with a frosted glass effect. */
+.glass-btn {
+    /* Semi-transparent white background. */
+    background: rgba(255, 255, 255, 0.03);
+    /* Blurs the content behind the button, creating the frosted glass look. */
+    backdrop-filter: blur(5px);
+    /* A subtle, semi-transparent border. */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    /* Semi-transparent white text color. */
+    color: rgba(255, 255, 255, 0.8);
+    /* Padding for inner spacing. */
+    padding: 0.8rem 1.5rem;
+    /* Fully rounded corners to create a pill shape. */
+    border-radius: 50px;
+    /* Sets the font for the button text. */
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    /* Smooth transition for all property changes (e.g., on hover). */
+    transition: all 0.3s ease;
+    /* Allows for flexible alignment of content inside the button. */
+    display: inline-flex;
+    align-items: center; /* Vertically centers content (text and emojis). */
+    justify-content: center; /* Horizontally centers content. */
+    gap: 0.5rem; /* Adds space between items inside the button (e.g., text and icon). */
+    cursor: pointer; /* Changes the cursor to a pointer on hover. */
+    text-align: center; /* Ensures text is centered. */
+}
+
+/* Hover state for the glass button. */
+.glass-btn:hover {
+    /* Changes background to a semi-transparent gold on hover. */
+    background: rgba(255, 215, 0, 0.1);
+    /* Makes the border more visible with a gold tint. */
+    border-color: rgba(255, 215, 0, 0.4);
+    /* Makes the text fully white. */
+    color: #fff;
+    /* Lifts the button slightly for a 3D effect. */
+    transform: translateY(-2px);
+    /* Adds a subtle shadow to enhance the lifting effect. */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+
+/* --- Main Call-to-Action (CTA) Button --- */
+/* Styles for the primary, eye-catching button on the page. */
+.glow-on-hover {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    padding: 1rem 3rem;
+    border: none; /* Removes the default border. */
+    outline: none; /* Removes the default outline. */
+    color: #000; /* Black text for contrast against the gold background. */
+    /* Creates a gold-like gradient background. */
+    background: linear-gradient(45deg, #BF953F, #FCF6BA, #AA771C);
+    border-radius: 5px; /* Slightly rounded corners. */
+    cursor: pointer;
+    position: relative; /* Required for z-index to work. */
+    z-index: 0;
+    transition: 0.3s; /* Smooth transition for hover effects. */
+    /* Adds a subtle outer glow that matches the gold color. */
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+}
+
+/* Hover state for the CTA button. */
+.glow-on-hover:hover {
+    transform: scale(1.05); /* Slightly enlarges the button on hover. */
+    box-shadow: 0 0 40px rgba(255, 215, 0, 0.6); /* Intensifies the glow. */
+    color: #222; /* Darkens the text color slightly. */
+}
+
+/* --- Pledge Form Buttons --- */
+/* Styles for the 'close' button on the pledge form overlay. */
+#close-pledge-btn {
+    position: absolute; /* Positions the button relative to its nearest positioned ancestor (the overlay). */
+    top: 2rem; 
+    right: 2rem;
+    width: 3.5rem; 
+    height: 3.5rem; 
+    font-size: 2rem; 
+    line-height: 1; /* Ensures the '×' character is centered vertically. */
+    background: rgba(0,0,0,0.6); /* Semi-transparent black background. */
+    color: #fff; 
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    border-radius: 50%; /* Makes the button a perfect circle. */
+    cursor: pointer; 
+    transition: all 0.3s ease; /* Smooth transition for all properties. */
+    display: flex; /* Enables flexbox for easy content centering. */
+    align-items: center; 
+    justify-content: center;
+    z-index: 1010; /* Ensures the close button stays on top of all other overlay content. */
+    box-shadow: 0 0 20px rgba(0,0,0,0.5); /* Adds a shadow for depth. */
+    backdrop-filter: blur(4px); /* Adds a blur effect to the background behind the button. */
+}
+
+/* Hover state for the close button. */
+#close-pledge-btn:hover { 
+    background: rgba(255, 215, 0, 0.2); /* Adds a gold tint to the background. */
+    border-color: #ffd700; /* Makes the border solid gold. */
+    transform: rotate(90deg); /* Rotates the '×' icon for a nice visual effect. */
+}
+
+/* Styles for the submit button within the pledge form. */
+.submit-btn { 
+    width: 100%; /* Makes the submit button span the full width of the form container. */
+}

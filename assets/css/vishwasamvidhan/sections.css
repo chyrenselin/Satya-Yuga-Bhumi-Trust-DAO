@@ -1,0 +1,42 @@
+/* --- Main Content & Section Styling --- */
+.constitution-body {
+    flex-grow: 1;
+    max-width: var(--container-max-width);
+    margin: calc(var(--spacing-unit) * 6) auto;
+    padding: calc(var(--spacing-unit) * 5) calc(var(--spacing-unit) * 6);
+    background-color: #FFFFFF;
+    box-shadow: var(--shadow-cosmic);
+    border-radius: var(--border-radius);
+    border: 1.5px solid var(--color-border-subtle);
+}
+.sacred-proclamation, .foundational-pillars, .articles-section, .affirmation-section, #living-archive-info, #eternal-beacon-conceptual {
+    margin-bottom: calc(var(--spacing-unit) * 8); padding-bottom: calc(var(--spacing-unit) * 6);
+    border-bottom: 1.5px dashed var(--color-border-subtle);
+}
+.constitution-body section:last-of-type { border-bottom: none; margin-bottom: 0; }
+
+section > h2 {
+    padding-bottom: calc(var(--spacing-unit) * 2.5); border-bottom: 2.5px solid var(--color-accent-primary);
+    display: flex; align-items: center; color: var(--color-accent-secondary); /* Uses a secondary accent color for section headings. */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.05);
+}
+.section-icon-unicode {
+    margin-right: calc(var(--spacing-unit)*2.5); font-size: 1.8em;
+    color: var(--color-accent-primary); opacity: 0.85; line-height: 1;
+    transition: transform var(--transition-speed-subtle) var(--transition-easing),
+                opacity var(--transition-speed-subtle) var(--transition-easing);
+}
+section > h2:hover .section-icon-unicode { transform: scale(1.2) rotate(-8deg); opacity: 1; }
+
+.preamble-section .profound-text p, .affirmation-section .profound-text p {
+    font-size: 1.3em; /* Increases the font size for the preamble and affirmation sections for emphasis. */
+    color: var(--color-text-primary);
+    text-indent: 2em; /* Increases the text indentation for paragraphs. */
+}
+.preamble-section .profound-text p:first-child, .affirmation-section .profound-text p:first-child { text-indent: 0; }
+
+.signature-mark {
+    display: block; text-align: right; margin-top: calc(var(--spacing-unit)*7);
+    font-style: italic; font-family: var(--font-heading-alt);
+    font-size: 1.2em; color: var(--color-accent-primary);
+}

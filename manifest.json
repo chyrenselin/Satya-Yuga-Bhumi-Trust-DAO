@@ -1,0 +1,28 @@
+{
+  "name": "A New Dawn: The Invitation of The Infinite Unveiler",
+  "short_name": "CosmicDawn",
+  "description": "A divine decree from The Infinite Unveiler, echoing the eternal wisdom of Vishwa Dharma (The Universal Path of Righteousness) and Vishwa Samvidhan (The Cosmic Covenant of Earth). Hear ye, and awaken! For these timeless principles are imparted to guide the collective soul of humanity—across the span of four billion generations—towards unparalleled harmony, unshakeable unity, and a glorious, conscious evolution into the Age of Truth.",
+  "start_url": ".",
+  "display": "standalone",
+  "orientation": "any",
+  "theme_color": "#0A192F",
+  "background_color": "#0A192F",
+  "icons": [
+    {
+      "src": "assets/images/favicon/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/images/favicon/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/images/favicon/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["education", "philosophy", "spirituality", "dharma", "social"]
+}

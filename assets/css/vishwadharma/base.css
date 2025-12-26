@@ -1,0 +1,60 @@
+/* --- Universal Styles & Accessibility Reset --- */
+
+/* A universal reset to ensure a consistent starting point across all browsers. */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height. */
+}
+
+/* Base styles for the root HTML element. */
+html {
+  scroll-behavior: smooth; /* Enables smooth scrolling for in-page links. */
+  /* Prevents automatic text size adjustments on mobile devices, giving developers more control. */
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  font-size: 16px; /* Sets the base font size, which is useful for 'rem' unit calculations. */
+  overflow-x: hidden; /* Prevents horizontal scrollbars at the document level. */
+  width: 100%;
+}
+
+/* Default styles for the body of the document. */
+body {
+  position: relative; /* Establishes a stacking context for pseudo-elements and child positioning. */
+  width: 100%;
+  overflow-x: hidden; /* Prevents content from causing a horizontal scrollbar. */
+  background-color: #fada8b; /* A very light, warm, and spiritual base color, like linen. */
+  color: #4A3B32; /* A deep, earthy brown for text, ensuring good contrast and readability. */
+  /* A "font stack" that prioritizes the Devanagari font for Hindi, then a spiritual-looking font, then a classic serif fallback. */
+  font-family: 'Noto Serif Devanagari', 'Philosopher', 'Georgia', serif;
+  line-height: 1.8; /* A generous line height for improved readability of long texts. */
+  /* A responsive base font size: it starts at 1rem, scales with 1.5% of the viewport width, but won't exceed 1.15rem. */
+  font-size: clamp(1rem, 1.5vw, 1.15rem);
+  padding-top: 0;
+  word-wrap: break-word; /* Allows long words to break and wrap to the next line to prevent overflow. */
+  /* These properties enable smoother font rendering on supported browsers. */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh; /* Ensures the body always takes up at least the full height of the viewport. */
+  z-index: 0; /* Base stacking context for the body. */
+}
+
+/* --- Focus Styles for Accessibility --- */
+/* The :focus-visible pseudo-class applies styles only when an element is focused via keyboard navigation (e.g., using the Tab key).
+   This avoids showing an outline for mouse users, improving aesthetics while maintaining accessibility. */
+:focus-visible {
+  outline: 3px solid #B8860B; /* A distinct "Dark GoldenRod" color for the focus outline. */
+  outline-offset: 2px; /* Adds a small gap between the element and its outline. */
+  border-radius: 3px;
+  box-shadow: 0 0 0 2px rgba(184, 134, 11, 0.25); /* Adds a subtle outer glow to the focus state. */
+}
+
+/* This rule is part of a common pattern (often paired with a small JS snippet that adds the 'using-mouse' class to the body on 'mousedown')
+   to explicitly hide focus outlines for mouse users on elements that are not focus-visible. */
+body.using-mouse :focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}

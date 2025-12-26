@@ -1,0 +1,37 @@
+/* --- Table Styles within Chapter Content --- */
+
+/* Styles for any table found within the .chapter .content container. */
+.chapter .content table {
+  width: 100%; /* Makes the table span the full width of its container. */
+  border-collapse: collapse; /* Merges adjacent cell borders into a single border. */
+  margin: 2rem 0; /* Adds vertical spacing around the table. */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.12); /* A subtle shadow for depth. */
+  border-radius: 7px; /* Rounded corners for the table. */
+  background-color: rgba(248, 248, 240, 0.6); /* A semi-transparent ivory background. */
+  border: 1px solid #DCDCDC; /* A light grey border. */
+}
+
+/* Styles for the table's caption element. */
+.chapter .content table caption {
+  margin: 0.6em 0 0.9em; /* Adds space around the caption. */
+  font-size: 0.95em; /* Slightly smaller than the surrounding text. */
+  color: #5D4037; /* An earthy brown text color. */
+  text-align: center;
+  font-style: italic;
+}
+
+/* Common styles for both table header (th) and table data (td) cells. */
+.chapter .content table th, .chapter .content table td {
+  border: 1px solid #f51919; /* A red border, likely for emphasis or to match a theme. */
+  padding: clamp(0.7rem, 1.6vw, 1.1rem); /* Responsive padding inside each cell. */
+  text-align: left; /* Aligns text to the left by default. */
+  color: #3E2723; /* A dark brown text color. */
+}
+
+/* Specific styles just for the table header (th) cells. */
+.chapter .content table th {
+  background-color: rgba(218, 165, 32, 0.1); /* A very transparent goldenrod background to distinguish the header row. */
+  font-weight: 700; /* Makes the header text bold. */
+  color: #5D4037;
+  text-align: center; /* Overrides the default left alignment for header cells. */
+}

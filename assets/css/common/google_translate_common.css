@@ -1,0 +1,90 @@
+/* 
+  Common styles to hide or reset Google Translate UI elements.
+  This file contains aggressive overrides necessary to customize the widget's appearance
+  and is shared across different sections of the website. The '!important' flag is
+  used frequently to ensure these styles take precedence over Google's inline styles.
+*/
+
+/* Hide the top banner, the pop-up tooltip, and other intrusive UI elements. */
+/* This is a comprehensive list of selectors that Google has used for its various pop-ups. */
+iframe.goog-te-banner-frame, 
+iframe.VIpgJd-ZVi9od-ORHb-OEVmcd,
+.goog-te-banner-frame.goog-te-ftab-banner,
+.goog-tooltip, 
+div[id^='goog-gt-tt'], /* Selects any div whose ID starts with 'goog-gt-tt'. */
+.VIpgJd-yAWNEb-tooltip, 
+#goog-gt-tt,
+.goog-te-balloon-frame {
+    /* A combination of properties to ensure the element is completely gone from the layout and view. */
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    width: 0 !important;
+    position: absolute !important;
+    top: -9999px !important; /* Moves the element far off-screen. */
+    left: -9999px !important;
+    overflow: hidden !important;
+    border: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Remove the "Powered by Google Translate" branding and logo links. */
+.goog-te-gadget a, 
+.goog-logo-link, 
+.goog-branding, 
+.goog-poweredby {
+    display: none !important;
+}
+
+/* Reset the main gadget wrapper to a clean slate, removing Google's default border and background. */
+/* This allows for custom styling to be applied in section-specific CSS files. */
+#google_translate_element .goog-te-gadget-simple {
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+    display: flex !important; /* Use flexbox for easier alignment with custom icons or text. */
+    align-items: center !important;
+}
+
+/* Reset the highlight style that Google applies to text on hover after translation. */
+/* This makes the translated text behave like normal text. */
+font[style*="vertical-align: inherit;"], /* A very broad selector to catch Google's inline-styled <font> tags. */
+.VIpgJd-yAWNEb-VIpgJd-fm, 
+.goog-text-highlight {
+    background-color: transparent !important;
+    color: inherit !important; /* Makes the text inherit its color from its parent. */
+    box-shadow: none !important;
+    border: none !important;
+    text-decoration: none !important;
+}
+
+/* Prevent the entire page from shifting down when the translation widget is active. */
+/* Google's script adds these classes and a 'top' style to the body to make room for its banner, which we have hidden. */
+html.translated-ltr, 
+html.translated-rtl,
+html.translated-ltr body, 
+html.translated-rtl body {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    top: 0px !important; /* Overrides Google's 'top: 39px !important'. */
+}
+
+/* A helper class to hide the translate element before it's been initialized by our JavaScript. */
+.google-translate-hidden {
+    display: none !important;
+}
+
+/* A general-purpose class to hide content visually while keeping it accessible to screen readers. */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0); /* Deprecated but widely supported method for clipping content. */
+    border: 0;
+}

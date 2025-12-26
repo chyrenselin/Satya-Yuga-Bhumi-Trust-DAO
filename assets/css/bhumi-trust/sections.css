@@ -1,0 +1,59 @@
+/* --- General Section Styling --- */
+
+/* Styles for the main hero (top) section of the page. */
+.hero-section {
+    /* Ensures the section takes up at least 80% of the viewport's height, making it prominent. */
+    min-height: 80vh;
+    /* Uses flexbox to center the content perfectly. */
+    display: flex;
+    flex-direction: column; /* Stacks content vertically. */
+    justify-content: center; /* Centers content vertically. */
+    align-items: center; /* Centers content horizontally. */
+    text-align: center; /* Ensures all text inside is centered. */
+    padding-top: 4rem; /* Adds padding at the top. */
+}
+
+/* A decorative separator line used within the hero section. */
+.hero-separator {
+    width: 100px;
+    height: 1px;
+    /* Creates a horizontal line that fades in from the left, is solid gold in the middle, and fades out to the right. */
+    background: linear-gradient(90deg, transparent, #BF953F, transparent);
+    /* Centers the separator and adds vertical space around it. */
+    margin: 2rem auto;
+}
+
+/* Adds top margin to the main "trust" section to separate it from the hero. */
+.trust-section {
+    margin-top: 8rem;
+}
+
+/* General styling for the header/title area of a section. */
+.section-header {
+    text-align: center; /* Centers the title and description. */
+    margin-bottom: 5rem; /* Adds significant space below the header before the content begins. */
+}
+
+/* --- Invocation Section Specific Styling --- */
+/* Styles for the distinct "Divine Invocation" section. */
+.invocation-section {
+    margin-top: 10rem; /* Adds a large amount of space above this section. */
+    text-align: center;
+    padding: 6rem 1.5rem; /* Large vertical padding to give the content ample space. */
+    /* Creates a soft, circular purple glow in the center of the section. */
+    background: radial-gradient(circle at center, rgba(30, 20, 50, 0.4) 0%, transparent 70%);
+    /* Adds subtle, gold-tinted lines to the top and bottom, framing the section. */
+    border-top: 1px solid rgba(255, 215, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+    position: relative; /* Establishes a positioning context. */
+}
+
+/* Styles for the ornamental divider using special characters (✦ ✧ ✦). */
+.ornament-divider {
+    color: #BF953F; /* Gold color. */
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    opacity: 0.8; /* Slightly transparent. */
+    /* Adds a glowing effect to the text characters. */
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}

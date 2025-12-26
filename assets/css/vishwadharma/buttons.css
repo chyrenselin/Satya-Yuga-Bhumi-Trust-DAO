@@ -1,0 +1,81 @@
+/* --- Button Styles for Vishwadharma Page --- */
+
+/* Styles for a container that holds a group of buttons. */
+.button-group {
+  display: flex; /* Uses flexbox for alignment. */
+  justify-content: flex-start; /* Aligns buttons to the start of the container. */
+  align-items: center; /* Vertically centers the buttons. */
+  /* Responsive gap between buttons: minimum 1rem, scales with 2.5% of viewport width, maximum 1.5rem. */
+  gap: clamp(1rem, 2.5vw, 1.5rem);
+  flex-wrap: wrap; /* Allows buttons to wrap to the next line on smaller screens. */
+  margin-top: 1.8rem;
+}
+
+/* Base style for all buttons on this page. */
+.button {
+  background-color: #8B4513; /* A rich, earthy brown (SaddleBrown). */
+  color: #FFF8DC; /* A warm, off-white (Cornsilk) for text. */
+  /* Responsive padding for the button. */
+  padding: clamp(0.85rem, 2.2vh, 1.1rem) clamp(1.6rem, 4.5vw, 2.2rem);
+  border-radius: 8px;
+  font-weight: 500;
+  /* Responsive font size. */
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
+  /* A complex shadow for a 3D, inset effect. */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.25), 0 1px 2px rgba(0,0,0,0.1) inset;
+  /* Smooth transition for all property changes. */
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  border: 1px solid rgba(0,0,0,0.1);
+  cursor: pointer;
+  display: inline-flex; /* Allows for easy alignment of internal content (like icons). */
+  align-items: center;
+  justify-content: center;
+  gap: 0.6em; /* Space between text and an icon inside the button. */
+  min-width: 150px;
+  font-family: 'Philosopher', serif; /* A specific, thematic font for these buttons. */
+  letter-spacing: 0.7px;
+  text-decoration: none; /* Removes underline if an 'a' tag is styled as a button. */
+}
+
+/* Hover and keyboard-focus states for the button. */
+.button:hover, .button:focus-visible {
+  background-color: #A0522D; /* A slightly lighter brown (Sienna) on hover. */
+  /* Lifts the button up and scales it slightly for a "pop" effect. */
+  transform: translateY(-2px) scale(1.02);
+  /* Enhances the shadow to increase the lifting effect. */
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3), 0 1px 2px rgba(0,0,0,0.1) inset;
+  color: #FFFFFF; /* Brighter text color on hover. */
+}
+
+/* The 'active' state, when the button is being clicked. */
+.button:active {
+  /* Pushes the button down slightly to simulate a press. */
+  transform: translateY(0px) scale(0.99);
+  /* Reduces the shadow to enhance the "pressed" illusion. */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2), 0 1px 2px rgba(0,0,0,0.1) inset;
+}
+
+/* --- Button Color Modifiers --- */
+
+/* A modifier class to make a button green. */
+.button.green { background-color: #6B8E23; /* OliveDrab */ }
+.button.green:hover, .button.green:focus-visible { background-color: #556B2F; /* DarkOliveGreen */ }
+
+/* A specific ID selector to style the stop music button. */
+#stopMusicBtn { background-color: #8B0000; /* DarkRed */ }
+#stopMusicBtn:hover, #stopMusicBtn:focus-visible { background-color: #A52A2A; /* Brown (a reddish brown) */ }
+
+
+/* --- Emoji Animation Classes --- */
+/* Note: The keyframes for these animations are likely in a shared 'animations.css' file. */
+
+.emoji-pulse {
+  display: inline-block;
+  /* This animation name 'pulseHeartBeat' seems specific. */
+  animation: pulseHeartBeat 0.8s ease-in-out infinite;
+}
+
+.emoji-sandclock {
+  display: inline-block;
+  animation: sandclock-tilt 2s ease-in-out infinite;
+}

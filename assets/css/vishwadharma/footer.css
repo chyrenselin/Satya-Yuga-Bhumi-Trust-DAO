@@ -1,0 +1,28 @@
+/* --- Footer Styles for Vishwadharma Page --- */
+
+/* Selects the footer element, using the attribute selector for the accessibility role to be more specific. */
+footer[role="contentinfo"] {
+  background: #3e2723; /* A very dark, earthy brown background. */
+  color: #ffecb3; /* A light, parchment-like color for the text, providing good contrast. */
+  text-align: center; /* Centers all text within the footer. */
+  /* Responsive padding. */
+  padding: clamp(1.8rem, 4.5vh, 2.8rem) 1.5rem;
+  /* Responsive font size. */
+  font-size: clamp(0.9rem, 1.6vw, 1.05rem);
+  /* Responsive margin-top to ensure adequate space above the footer. */
+  margin-top: clamp(3.5rem, 9vh, 5.5rem);
+  line-height: 1.65;
+  /* A thick, dark border at the top to separate the footer from the main content. */
+  border-top: 4px solid #311B0B;
+  position: relative; /* Establishes a positioning context. */
+  z-index: 1;
+}
+
+/* Styles for the smaller credit text within the footer. */
+.footer-credits {
+  /* Sets the font size to 90% of the parent footer's font size. */
+  font-size: 0.9em;
+  margin-top: 0.6rem;
+  line-height: 1.4;
+  color: #bcaaa4; /* A faded, lighter brown color for less emphasis. */
+}

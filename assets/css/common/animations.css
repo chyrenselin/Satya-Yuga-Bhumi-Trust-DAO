@@ -1,0 +1,41 @@
+/* --- Common Animation Classes and Keyframes --- */
+/* These classes can be applied to any element, typically an emoji in a <span>, to add a simple animation. */
+
+/* Class to apply a continuous spinning animation. */
+.emoji-spin { 
+    display: inline-block; /* Ensures the element behaves like a block for transformations but flows inline. */
+    animation: spin 4s linear infinite; /* Applies the 'spin' animation over 4 seconds, at a constant speed, indefinitely. */
+}
+
+/* Class to apply a pulsing (grow and shrink) animation. */
+.emoji-pulse { 
+    display: inline-block;
+    animation: pulse 1.5s ease-in-out infinite; /* Applies the 'pulse' animation over 1.5 seconds, with smooth easing, indefinitely. */
+}
+
+/* Class to apply a tilting animation, like a sandclock. */
+.emoji-sandclock { 
+    display: inline-block; 
+    animation: sandclock-tilt 2s ease-in-out infinite; /* Applies the 'sandclock-tilt' animation over 2 seconds, with smooth easing, indefinitely. */
+}
+
+/* --- Keyframe Definitions --- */
+
+/* Defines the 'spin' animation. */
+@keyframes spin { 
+    from { transform: rotate(0deg); } /* The starting point of the rotation. */
+    to { transform: rotate(360deg); } /* The ending point, a full circle. */
+}
+
+/* Defines the 'pulse' animation. */
+@keyframes pulse { 
+    0%, 100% { transform: scale(1); } /* At the beginning and end, the element is at its normal size. */
+    50% { transform: scale(1.2); } /* In the middle of the animation, the element is scaled up by 20%. */
+}
+
+/* Defines the 'sandclock-tilt' animation. */
+@keyframes sandclock-tilt { 
+    0%, 100% { transform: rotateZ(0deg); } /* At the beginning and end, the element is upright. */
+    25% { transform: rotateZ(10deg); } /* At the 25% mark, it tilts 10 degrees to the right. */
+    75% { transform: rotateZ(-10deg); } /* At the 75% mark, it tilts 10 degrees to the left. */
+}

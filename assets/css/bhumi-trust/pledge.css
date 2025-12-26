@@ -1,0 +1,109 @@
+/* --- Pledge Form Overlay & Container Styles --- */
+
+/* Styles for the full-screen overlay that contains the pledge form. */
+#pledge-overlay {
+    position: fixed; /* Fixes the overlay relative to the viewport, covering the entire screen. */
+    top: 0; 
+    left: 0;
+    width: 100vw; /* 100% of the viewport width. */
+    height: 100vh; /* 100% of the viewport height. */
+    z-index: 9999; /* A very high z-index to ensure it appears on top of all other content. */
+    display: flex; /* Uses flexbox to easily center the form container. */
+    justify-content: center; /* Centers the form horizontally. */
+    align-items: center; /* Centers the form vertically. */
+    
+    /* Default state is hidden. */
+    opacity: 0; 
+    visibility: hidden;
+    
+    /* Smooth transition for the opacity fade. The visibility property changes instantly after the opacity transition ends. */
+    transition: opacity 0.5s ease-in-out, visibility 0s 0.5s;
+    
+    padding: 1rem; /* Padding for small screens to prevent the form from touching the edges. */
+    
+    /* Semi-transparent black background. */
+    background: rgba(0, 0, 0, 0.7);
+    /* Blurs the content behind the overlay. */
+    backdrop-filter: blur(8px);
+}
+
+/* This class is added via JavaScript to make the overlay visible. */
+#pledge-overlay.is-visible {
+    opacity: 1; /* Fades the overlay in. */
+    visibility: visible; /* Makes the overlay interactive. */
+    /* The transition for visibility is removed here to make it appear instantly when opacity starts changing. */
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Styles for the container panel that holds the pledge form content. */
+.pledge-container {
+    /* Dark, semi-transparent background to distinguish from the overlay background. */
+    background: rgba(10, 10, 10, 0.95);
+    /* Gold border to match the site's theme. */
+    border: 1px solid #BF953F;
+    /* Outer shadow for depth and an inner glow effect. */
+    box-shadow: 0 0 50px rgba(0,0,0,0.8), 0 0 20px rgba(191, 149, 63, 0.2);
+    padding: 3rem; /* Generous padding inside the container. */
+    max-width: 500px; /* Limits the maximum width on large screens. */
+    width: 90%; /* Responsive width for smaller screens. */
+    position: relative; /* Establishes a positioning context. */
+    max-height: 90vh; /* Prevents the form from being taller than the viewport. */
+    overflow-y: auto; /* Allows the container to scroll vertically if content overflows. */
+    border-radius: 12px; /* Rounded corners. */
+}
+
+/* --- Pledge Form Element Styles --- */
+
+/* Styles the form itself. */
+.pledge-form {
+    display: flex;
+    flex-direction: column; /* Stacks form elements vertically. */
+    gap: 1.5rem; /* Creates consistent spacing between form elements. */
+    margin-top: 1.5rem; /* Adds space above the form. */
+}
+
+/* Base class for text inputs and textareas in the form. */
+.cosmic-input {
+    width: 100%;
+    background: rgba(255,255,255,0.05); /* Very subtle, dark background. */
+    border: 1px solid rgba(255,255,255,0.1); /* Subtle border. */
+    color: #fff; /* White text color. */
+    padding: 1rem;
+    border-radius: 4px;
+    font-family: inherit; /* Inherits the font from the body. */
+    font-size: 1rem;
+    transition: 0.3s;
+    box-sizing: border-box; /* Ensures padding and border are included in the total width. */
+}
+
+/* Focus state for the inputs, providing a glowing feedback effect. */
+.cosmic-input:focus {
+    border-color: #BF953F; /* Changes border color to gold on focus. */
+    box-shadow: 0 0 10px rgba(191, 149, 63, 0.3); /* Adds a gold glow. */
+    outline: none; /* Removes the default browser outline. */
+}
+
+/* Specific styles for the textarea element. */
+.textarea-field {
+    min-height: 100px; /* Sets a minimum height. */
+    resize: vertical; /* Allows the user to resize the textarea vertically only. */
+}
+
+/* Styles for the label associated with the checkbox. */
+.checkbox-label {
+    display: flex; /* Uses flexbox for aligning the checkbox and its text. */
+    gap: 1rem; /* Space between the checkbox and the text. */
+    align-items: flex-start; /* Aligns items to the top. */
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.7); /* Slightly faded text color. */
+    cursor: pointer;
+}
+
+/* Styles for the custom checkbox. */
+.cosmic-checkbox {
+    margin-top: 0.25rem; /* Aligns the checkbox nicely with the first line of text. */
+    accent-color: #BF953F; /* Changes the color of the checkmark to gold. */
+    width: 1.2rem;
+    height: 1.2rem;
+    flex-shrink: 0; /* Prevents the checkbox from shrinking on smaller screens. */
+}

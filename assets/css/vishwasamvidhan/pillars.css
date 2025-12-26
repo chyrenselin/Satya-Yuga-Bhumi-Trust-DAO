@@ -1,0 +1,26 @@
+.pillars-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); gap: calc(var(--spacing-unit) * 4.5); }
+.pillar {
+    background-color: rgba(251, 240, 228, 0.7); /* Sets a semi-transparent parchment background for the pillar cards. */
+    padding: calc(var(--spacing-unit) * 4);
+    border: 1.5px solid var(--color-border-subtle);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-ethereal);
+    text-align: center; display: flex; flex-direction: column;
+    transition: transform var(--transition-speed-subtle) var(--transition-easing),
+                box-shadow var(--transition-speed-subtle) var(--transition-easing);
+}
+.pillar:hover { transform: translateY(-6px) scale(1.025); box-shadow: var(--shadow-profound); }
+
+.pillar-icon-unicode {
+    font-size: 3.5em; display: block; margin-bottom: calc(var(--spacing-unit)*2.5);
+    color: var(--color-accent-primary);
+    transition: transform 0.5s ease-in-out; /* Smooth transition for the icon animation on hover. */
+}
+.pillar:hover .pillar-icon-unicode { transform: rotateY(360deg) scale(1.1); }
+
+.pillar h3 {
+    font-family: var(--font-ui); font-size: 1.45em; font-weight:600;
+    color: var(--color-accent-secondary); /* Uses a secondary accent color for the pillar titles. */
+    margin-bottom: calc(var(--spacing-unit)*1.8);
+}
+.pillar p { font-size: 1.05em; color: var(--color-text-secondary); max-width: 100%; margin-top: auto; }

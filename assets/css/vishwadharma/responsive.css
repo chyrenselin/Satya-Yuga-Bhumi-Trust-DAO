@@ -1,0 +1,475 @@
+/* --- Responsive Design for Vishwadharma Page --- */
+
+/* --- Tablet & Smaller (up to 768px) --- */
+@media (max-width: 768px) {
+  /* Adjusts base typography for better readability on smaller screens. */
+  body {
+    line-height: 1.7;
+    font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+  }
+  header[role="banner"] {
+    padding: 1.2rem 0.8rem;
+    font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+  }
+  main[role="main"] { padding: 0.5rem; }
+
+  /* Stacks the hero section content vertically. */
+  .hero {
+    padding: 2.5rem 0;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    text-align: center;
+  }
+  /* Adjusts the hero image container. */
+  .hero-image-area {
+    flex: none; /* Resets flex properties. */
+    max-width: 65%;
+    margin: 0 auto;
+    border-width: 8px;
+    padding: 4px;
+    border-radius: 15px;
+  }
+  .hero-image-area img { border-radius: 8px; }
+
+  /* Adjusts the hero text content area. */
+  .hero-content-area {
+    flex-grow: 0;
+    max-width: 90%;
+    padding: 0 1rem;
+  }
+  .hero h2 {
+    margin-bottom: 0.6rem;
+    font-size: clamp(1.3rem, 4.5vw, 1.6rem);
+  }
+  .hero p {
+    font-size: clamp(0.95rem, 1.6vw, 1.05rem);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+  }
+  /* Centers the button group. */
+  .button-group {
+    justify-content: center;
+    gap: 0.8rem;
+    margin-top: 1.5rem;
+  }
+  .translate-pair { gap: 0.4rem; }
+  /* Reduces button size. */
+  .button {
+    font-size: clamp(0.9rem, 1.3vw, 1rem);
+    padding: 0.7rem 1.5rem;
+    min-width: 130px;
+    border-radius: 6px;
+  }
+
+  /* Reduces Google Translate widget size. */
+  #google_translate_element { padding: 0.3rem 0.4rem; }
+  #google_translate_element select.goog-te-combo {
+    font-size: clamp(0.9rem, 1.6vw, 1.05rem) !important;
+    padding: 0.35rem 0.7rem !important;
+    border: 1px solid #DEB887 !important;
+    border-radius: 5px !important;
+    cursor: pointer !important;
+    color: #5C4033 !important;
+    background-color: #FFF5EE !important;
+    min-height: 40px;
+    font-family: 'Philosopher', 'Arial', sans-serif !important;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  #google_translate_element select.goog-te-combo:hover { border-color: #A0522D !important; }
+  #google_translate_element .goog-te-gadget-simple { display: flex !important; align-items: center !important;}
+  #google_translate_element .goog-te-gadget-icon {
+    margin-right: 5px !important;
+    width: 30px !important; /* Slightly smaller icon on mobile. */
+    height: 30px !important;
+  }
+  
+  /* Reduces spacing and font sizes for all other sections. */
+  section { padding: 2rem 0; }
+  .about-content-box {
+    padding: 1.5rem;
+    border-radius: 10px;
+    border-width: 1px;
+  }
+  .about-content-box h3 {
+    font-size: clamp(1.3rem, 2.1vw, 1.5rem);
+    margin-bottom: 1rem;
+  }
+  .about-content-box h3::before {
+    font-size: 1.6rem;
+    margin-right: 0.6rem;
+  }
+  .about-content-box p {
+    font-size: clamp(0.95rem, 1.4vw, 1.05rem);
+    line-height: 1.6;
+  }
+  .chapters-heading {
+    font-size: clamp(1.5rem, 2.8vw, 1.8rem);
+    margin-bottom: 2rem;
+  }
+  .chapters-heading::after {
+    width: 50px;
+    height: 2px;
+    margin: 6px auto 0;
+  }
+  .chapter {
+    margin-bottom: 1.5rem;
+    border-left-width: 4px;
+    border-radius: 8px;
+  }
+  .chapter h2 {
+    font-size: clamp(1.3rem, 2.1vw, 1.5rem);
+    padding: 1rem 1.2rem;
+  }
+  .chapter h2::after {
+    font-size: 1rem;
+    margin-left: 0.8rem;
+  }
+  .chapter .content {
+    font-size: clamp(0.9rem, 1.05vw, 1rem);
+    padding: 1.2rem;
+    line-height: 1.6;
+  }
+  .chapter .content hr { margin: 1.8rem 0; }
+  /* Adjusts table cell padding. */
+  .chapter .content table th,
+  .chapter .content table td {
+    padding: 0.6rem;
+    font-size: clamp(0.85rem, 1vw, 0.95rem);
+    white-space: normal;
+  }
+  footer[role="contentinfo"] {
+    padding: 1.5rem 0.8rem;
+    font-size: 0.9rem;
+    margin-top: 4rem;
+  }
+}
+
+/* --- Mobile Phones (up to 480px) --- */
+@media (max-width: 480px) {
+  body { line-height: 1.5; }
+  header[role="banner"] {
+    padding: 0.8rem 0.5rem;
+    font-size: clamp(1.4rem, 3vw, 1.8rem);
+  }
+  .hero {
+    padding: 2rem 0;
+    gap: 1.5rem;
+  }
+  .hero-image-area {
+    max-width: 70%;
+    border-width: 6px;
+    padding: 3px;
+  }
+  .hero-image-area img { border-radius: 6px; }
+  .hero-content-area { padding: 0 0.5rem; }
+  .hero h2 {
+    font-size: clamp(1.1rem, 4.5vw, 1.4rem);
+    margin-bottom: 0.5rem;
+  }
+  .hero p {
+    font-size: clamp(0.85rem, 1.5vw, 0.95rem);
+    margin-bottom: 1rem;
+    line-height: 1.5;
+  }
+  .button-group {
+    justify-content: center;
+    gap: 0.6rem;
+    margin-top: 1rem;
+  }
+  .translate-pair { gap: 0.3rem; }
+  .button {
+    font-size: clamp(0.8rem, 1.2vw, 0.9rem);
+    padding: 0.6rem 1.2rem;
+    min-width: 110px;
+    border-radius: 5px;
+  }
+  #google_translate_element { padding: 0.2rem 0.4rem; }
+  #google_translate_element select.goog-te-combo {
+    min-height: 30px;
+    font-size: 0.9rem !important;
+    padding: 0.1rem 0.3rem !important;
+  }
+  #google_translate_element .goog-te-gadget-icon {
+    margin-right: 3px !important;
+    width: 28px !important;
+    height: 28px !important;
+  }
+  section { padding: 1.5rem 0; }
+  .about-content-box {
+    padding: 1.2rem;
+    border-radius: 8px;
+    border-width: 1px;
+  }
+  .about-content-box h3 {
+    font-size: clamp(1.1rem, 1.8vw, 1.3rem);
+    margin-bottom: 0.8rem;
+  }
+  .about-content-box h3::before {
+    font-size: 1.4rem;
+    margin-right: 0.5rem;
+  }
+  .about-content-box p {
+    font-size: clamp(0.85rem, 1.2vw, 0.95rem);
+    line-height: 1.5;
+  }
+  .chapters-heading {
+    font-size: clamp(1.4rem, 2.6vw, 1.6rem);
+    margin-bottom: 1.5rem;
+  }
+  .chapters-heading::after {
+    width: 40px;
+    height: 2px;
+    margin: 5px auto 0;
+  }
+  .chapter {
+    margin-bottom: 1rem;
+    border-left-width: 3px;
+    border-radius: 6px;
+  }
+  .chapter h2 {
+    font-size: clamp(1.2rem, 2vw, 1.4rem);
+    padding: 0.8rem 1rem;
+  }
+  .chapter h2::after {
+    font-size: 0.9rem;
+    margin-left: 0.6rem;
+  }
+  .chapter .content {
+    font-size: 0.85rem;
+    padding: 1rem;
+    line-height: 1.4;
+  }
+  .chapter .content hr {
+    margin: 1.5rem 0;
+    border-top-width: 1px;
+  }
+  .chapter .content ul,
+  .chapter .content ol {
+    padding-left: 1.5rem;
+    margin-bottom: 0.8rem;
+  }
+  .chapter .content ul li,
+  .chapter .content ol li { margin-bottom: 0.4rem; }
+
+  /* --- Responsive Table --- */
+  /* This technique transforms a standard table into a vertical list on small screens. */
+  .chapter .content table thead { display: none; } /* Hide the original table header. */
+  .chapter .content table tbody,
+  .chapter .content table tr,
+  .chapter .content table th,
+  .chapter .content table td {
+    display: block; /* Make all table elements block-level, so they stack vertically. */
+    width: 100% !important;
+    text-align: left !important;
+    white-space: normal;
+    padding: 0.4em 0.1em;
+    border: none;
+    box-sizing: border-box;
+  }
+  .chapter .content table tr {
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 0.7em;
+    padding-bottom: 0.4em;
+  }
+  .chapter .content table tr:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+  .chapter .content table td {
+    padding-left: 0.2em;
+    position: relative;
+  }
+  /* This pseudo-element uses the 'data-label' attribute from the HTML to recreate the table header for each cell. */
+  .chapter .content table td[data-label]::before {
+    content: attr(data-label) ": "; /* Displays the label text before the cell content. */
+    font-weight: bold;
+    display: block;
+    margin-bottom: 0.1em;
+    color: #6D4C41;
+  }
+  .chapter .content table tbody td[scope="row"] {
+    font-weight: bold;
+    color: #8B4513;
+    margin-bottom: 0.3em;
+    padding-left: 0;
+  }
+  /* Hide the pseudo-element label for the row headers, as it's not needed. */
+  .chapter .content table tbody td[scope="row"]::before { display: none; }
+  footer[role="contentinfo"] {
+    padding: 0.5rem 0.3rem;
+    font-size: 0.8rem;
+    margin-top: 1.5rem;
+  }
+}
+
+/* --- Extra Small Devices (up to 120px - edge case) --- */
+/* This is a safeguard for extremely narrow screens. */
+@media (max-width: 120px) {
+  /* Drastically reduce font sizes and line height to prevent overflow. */
+  body {
+    font-size: 0.85rem;
+    line-height: 1.35;
+  }
+  header[role="banner"] {
+    padding: 0.5rem 0.3rem;
+    font-size: 1.1rem;
+  }
+   .hero h2 { font-size: 1rem; }
+  .hero p { font-size: 0.8rem; }
+  /* Stack the button group vertically. */
+  .button-group {
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-top: 0.6rem;
+    align-items: stretch; /* Make buttons full width of the container. */
+  }
+  .translate-pair {
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 0.2rem;
+    justify-content: center;
+  }
+  .translate-pair .button {
+    width: auto;
+    flex-grow: 1;
+    text-align: center;
+  }
+  /* Make all buttons full width and smaller. */
+  .button {
+    width: 100%;
+    min-width: auto;
+    font-size: 0.75rem;
+    padding: 0.4rem 0.6rem;
+    border-radius: 4px;
+  }
+  #google_translate_element {
+    width: auto;
+    padding: 0.2rem 0.3rem;
+    margin: 0 auto;
+  }
+  #google_translate_element select.goog-te-combo {
+    min-height: 28px;
+    font-size: 0.8rem !important;
+    padding: 0.1rem 0.3rem !important;
+  }
+  #google_translate_element .goog-te-gadget-icon {
+    margin-right: 3px !important;
+    width: 24px !important;
+    height: 24px !important;
+  }
+  section { padding: 0.8rem 0; }
+  .about-content-box,
+  .chapter {
+    margin-bottom: 0.6rem;
+    border-radius: 4px;
+    border-left-width: 2px;
+  }
+  .about-content-box { padding: 0.8rem; }
+  .about-content-box h3 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .about-content-box h3::before {
+    font-size: 1.2rem;
+    margin-right: 0.4rem;
+  }
+  .about-content-box p {
+    font-size: 0.8rem;
+    line-height: 1.35;
+  }
+  .chapters-heading {
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+  }
+  .chapters-heading::after {
+    width: 30px;
+    height: 2px;
+    margin: 4px auto 0;
+  }
+  .chapter {
+    margin-bottom: 0.8rem;
+    border-left-width: 2px;
+    border-radius: 5px;
+  }
+  .chapter h2 {
+    font-size: 1.1rem;
+    padding: 0.6rem 0.8rem;
+  }
+  .chapter h2::after {
+    font-size: 0.8rem;
+    margin-left: 0.5rem;
+  }
+  .chapter .content {
+    font-size: 0.8rem;
+    padding: 0.6rem 0.4rem;
+    line-height: 1.35;
+  }
+  .chapter .content hr {
+    margin: 1.2rem 0;
+    border-top-width: 1px;
+  }
+  .chapter .content ul,
+  .chapter .content ol {
+    padding-left: 1.2rem;
+    margin-bottom: 0.8rem;
+  }
+  .chapter .content ul li,
+  .chapter .content ol li { margin-bottom: 0.4rem; }
+
+  /* Ensure the responsive table still functions at this tiny size. */
+  .chapter .content table thead { display: none; }
+  .chapter .content table tbody,
+  .chapter .content table tr,
+  .chapter .content table th,
+  .chapter .content table td {
+    display: block;
+    width: 100% !important;
+    text-align: left !important;
+    white-space: normal;
+    padding: 0.4em 0.1em;
+    border: none;
+    box-sizing: border-box;
+  }
+  .chapter .content table tr {
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 0.7em;
+    padding-bottom: 0.4em;
+  }
+  .chapter .content table tr:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+  .chapter .content table td {
+    padding-left: 0.2em;
+    position: relative;
+  }
+  .chapter .content table td[data-label]::before {
+    content: attr(data-label) ": ";
+    font-weight: bold;
+    display: block;
+    margin-bottom: 0.1em;
+    color: #6D4C41;
+  }
+  .chapter .content table tbody td[scope="row"] {
+    font-weight: bold;
+    color: #8B4513;
+    margin-bottom: 0.3em;
+    padding-left: 0;
+  }
+  .chapter .content table tbody td[scope="row"]::before { display: none; }
+  footer[role="contentinfo"] {
+    padding: 0.5rem 0.3rem;
+    font-size: 0.8rem;
+    margin-top: 1.5rem;
+  }
+}
+
+/* This rule applies to screens wider than the smallest mobile breakpoint.
+   It ensures that text inside table cells can wrap if needed, overriding any potential 'white-space: nowrap'. */
+@media (min-width: 321px) {
+  .chapter .content table th,
+  .chapter .content table td {
+    white-space: normal;
+  }
+}

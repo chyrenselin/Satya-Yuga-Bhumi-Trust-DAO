@@ -1,0 +1,38 @@
+/* --- Button Styles & Animations --- */
+@keyframes pulseHeartBeat { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.2) rotate(5deg); opacity: 0.9; } /* Adds a subtle rotation to the pulse animation. */ }
+
+@keyframes sandClockEternal { 0%, 100% { transform: rotateZ(0deg) scale(1); } 20% { transform: rotateZ(10deg) scale(1.05); } 40% { transform: rotateZ(-10deg) scale(1.05); } 60% { transform: rotateZ(6deg) scale(1.02); } 80% { transform: rotateZ(-6deg) scale(1.02); } }
+
+.emoji-pulse { display: inline-block; vertical-align: middle; animation: pulseHeartBeat 1.2s ease-in-out infinite; }
+.emoji-sandclock { display: inline-block; vertical-align: middle; animation: sandClockEternal 3s ease-in-out infinite; }
+
+.button {
+    font-family: var(--font-ui); font-size: clamp(0.95em, 1.9vw, 1.1em); font-weight: 500;
+    padding: calc(var(--spacing-unit)*1.2) calc(var(--spacing-unit)*1.8);
+    border-radius: var(--border-radius); cursor: pointer;
+    transition: all var(--transition-speed-subtle) var(--transition-easing);
+    display: inline-flex; align-items: center; justify-content: center;
+    gap: 0.8em; white-space: nowrap; text-decoration: none;
+    border: 2px solid transparent; line-height: 1.5;
+    box-shadow: var(--shadow-ethereal);
+}
+.button:active { transform: translateY(1.5px) scale(0.97); box-shadow: none; }
+
+.constitution-translate-btn {
+    background-color: rgba(255,255,255,0.06); color: var(--color-header-text);
+    border-color: rgba(234, 234, 234, 0.5);
+}
+.constitution-translate-btn:hover, .constitution-translate-btn:focus {
+    background-color: rgba(255,255,255,0.2); color: var(--color-accent-primary-glow);
+    border-color: var(--color-accent-primary-glow);
+    transform: translateY(-3px); box-shadow: var(--shadow-profound);
+}
+
+.constitution-action-btn {
+    background-color: var(--color-button-bg); color: var(--color-button-text);
+    border-color: var(--color-button-bg); text-shadow: 1px 1px 2.5px rgba(0,0,0,0.15);
+}
+.constitution-action-btn:hover, .constitution-action-btn:focus {
+    background-color: var(--color-button-hover-bg); border-color: var(--color-button-hover-bg);
+    color: #fff; transform: translateY(-3px); box-shadow: var(--shadow-profound);
+}

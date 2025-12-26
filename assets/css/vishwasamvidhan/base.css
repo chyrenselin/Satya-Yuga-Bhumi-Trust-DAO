@@ -1,0 +1,77 @@
+:root {
+    /* --- Core Typography & Fonts --- */
+    --font-main-text: 'EB Garamond', 'Georgia', 'Times New Roman', serif;
+    --font-ui: 'Inter', 'Helvetica Neue', 'Arial', sans-serif;
+    --font-heading-alt: 'Noto Serif', 'EB Garamond', serif;
+    --font-code-symbolic: 'Roboto Mono', 'Courier New', monospace;
+    --base-font-size: 16.5px;
+
+    /* --- Color Palette --- */
+    --color-background-deep-space: #0A192F; /* Deep blue for header backgrounds. */
+    --color-background-parchment: #FBF0E4;  /* Light parchment for the main body background. */
+    --color-text-primary: #2c3e50;
+    --color-text-secondary: #566573;
+    --color-header-bg: var(--color-background-deep-space);
+    --color-header-text: #EAEAEA;
+    --color-accent-primary: #D4AF37;
+    --color-accent-primary-glow: #FFD700;
+    --color-accent-secondary: #87CEEB;
+    --color-border-subtle: #D1C4E9;
+    --color-highlight-earth: #558B2F;
+    --color-link: #3498DB;
+    --color-link-hover: var(--color-accent-secondary);
+    --color-focus-ring: rgba(212, 175, 55, 0.6);
+
+    /* --- Spacing, Layout & Transitions --- */
+    --spacing-unit: 8px;
+    --container-max-width: 1080px;
+    --header-max-width: 1440px;
+    --border-radius: 6px;
+    --transition-speed-subtle: 0.4s;
+    --transition-speed-moderate: 0.7s;
+    --transition-easing: cubic-bezier(0.25, 0.1, 0.25, 1);
+
+    /* --- Shadows & Depth Effects --- */
+    --shadow-ethereal: 0 3px 7px rgba(42, 30, 70, 0.07);
+    --shadow-profound: 0 6px 15px rgba(20, 30, 50, 0.09);
+    --shadow-cosmic: 0 10px 25px rgba(10, 20, 40, 0.12);
+
+    /* --- UI Component Variables --- */
+    --color-button-bg: var(--color-accent-primary);
+    --color-button-text: #FFFFFF;
+    --color-button-hover-bg: #B8860B;
+    --gradient-header-cosmic: linear-gradient(155deg, var(--color-header-bg) 0%, #1B263B 70%, #283747 100%);
+    
+    /* Gradient for the subtle background pulse effect. */
+    --gradient-body-pulse: radial-gradient(ellipse at center, rgba(10, 25, 47, 0.02) 0%, rgba(10, 25, 47, 0) 70%);
+}
+
+/* --- Background Animation --- */
+@keyframes cosmicPulseBackground {
+    0%, 100% { background-size: 100% 100%; opacity: 0.7; }
+    50% { background-size: 105% 105%; opacity: 1; } /* Creates a subtle "breathing" effect by zooming and fading. */
+}
+
+/* --- Universal Box Model Reset --- */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* --- HTML & Body Base Styles --- */
+html { scroll-behavior: smooth; font-size: var(--base-font-size); overflow-x: hidden; width: 100%; height: 100%; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+body { 
+    line-height: 1.4; 
+    color: var(--color-text-primary); 
+    width: auto !important; 
+    
+    /* --- Animated Background Implementation --- */
+    /* 1. A subtle radial gradient overlay. */
+    background-image: var(--gradient-body-pulse);
+    
+    /* 2. The base parchment background color. */
+    background-color: var(--color-background-parchment); 
+    
+    background-attachment: fixed; /* Ensures the background remains fixed during scrolling. */
+    
+    /* 3. Applies the pulsing animation. */
+    animation: cosmicPulseBackground 25s ease-in-out infinite alternate;
+}

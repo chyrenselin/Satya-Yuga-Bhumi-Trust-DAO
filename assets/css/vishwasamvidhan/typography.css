@@ -1,0 +1,34 @@
+/* --- Core Typography Styles --- */
+h1, h2, h3, h4 {
+    font-family: var(--font-heading-alt);
+    color: var(--color-background-deep-space); /* Sets the heading color to the dark blue from the header background. */
+    font-weight: 500;
+    line-height: 1.4;
+    margin-bottom: calc(var(--spacing-unit) * 2);
+}
+h2 { font-size: clamp(1.8em, 2.7vw, 2.8em); margin-bottom: calc(var(--spacing-unit) * 3.5); }
+h3 { font-size: clamp(1.4em, 3.2vw, 2em); font-weight:600; color: var(--color-text-primary); }
+h4 { font-size: clamp(1.15em, 2.7vw, 1.6em); font-weight:600; color: var(--color-text-secondary); }
+p { margin-bottom: calc(var(--spacing-unit) * 2.8); max-width: 72ch; } /* Increases the bottom margin for better readability between paragraphs. */
+
+a { color: var(--color-link); text-decoration: none; transition: color var(--transition-speed-subtle) var(--transition-easing), opacity var(--transition-speed-subtle) var(--transition-easing); }
+a:hover, a:focus { color: var(--color-link-hover); text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }
+
+blockquote {
+    margin: calc(var(--spacing-unit) * 4) 0;
+    padding: calc(var(--spacing-unit) * 2.5) calc(var(--spacing-unit) * 3.5);
+    border-left: 6px solid var(--color-accent-primary);
+    background-color: rgba(251, 240, 228, 0.7); /* Uses a lighter parchment color for the background. */
+    font-style: italic;
+    color: var(--color-text-secondary);
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+    box-shadow: var(--shadow-ethereal);
+}
+blockquote p:last-child { margin-bottom: 0; }
+
+.highlight-earth { color: var(--color-highlight-earth); font-style: italic; font-weight: 500; }
+.subtitle-emphasis {
+    font-family: var(--font-main-text); font-style: italic; font-weight: 400;
+    color: var(--color-text-secondary); font-size: 0.98em; display: block;
+    margin-top: calc(var(--spacing-unit) * 0.75);
+}

@@ -1,0 +1,58 @@
+/* --- Google Translate Customization for Vishwadharma Page --- */
+
+/* A container to group the translate button and the widget itself. */
+.translate-pair {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem; /* Space between the button and the widget. */
+  flex-shrink: 1; /* Allows the container to shrink if space is limited. */
+}
+
+/* Styles for the main container that Google's script injects its widget into. */
+#google_translate_element {
+  display: none; /* The widget is hidden by default. JavaScript will make it visible. */
+  border: 1px solid #CD853F; /* A "Peru" brown border. */
+  background-color: rgba(255, 248, 237, 0.8); /* A semi-transparent "FloralWhite" background. */
+  padding: 0.35rem 0.55rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.12); /* A subtle shadow for depth. */
+  transition: opacity 0.3s ease;
+}
+
+/* A specific attribute selector to override Google's inline styles.
+   This rule applies only when Google's script adds 'display: flex' as an inline style,
+   ensuring our alignment rules are also applied. */
+#google_translate_element[style*='display: flex'] {
+  display: flex !important;
+  align-items: center;
+}
+
+/* Overrides the styles for the language selection dropdown menu.
+   '!important' is used to force these styles over Google's default inline styles. */
+#google_translate_element select.goog-te-combo {
+  font-size: clamp(0.9rem, 1.6vw, 1.05rem) !important; /* Responsive font size. */
+  padding: 0.35rem 0.7rem !important;
+  border: 1px solid #DEB887 !important; /* A "BurlyWood" border color. */
+  border-radius: 5px !important;
+  cursor: pointer !important;
+  color: #5C4033 !important; /* A dark brown text color. */
+  background-color: #FFF5EE !important; /* A "SeaShell" background color. */
+  min-height: 40px;
+  font-family: 'Philosopher', 'Arial', sans-serif !important; /* Ensures thematic font consistency. */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover state for the dropdown menu. */
+#google_translate_element select.goog-te-combo:hover {
+  border-color: #A0522D !important; /* A darker "Sienna" brown border on hover. */
+}
+
+/* Overrides the default Google Translate icon with a custom one. */
+#google_translate_element .goog-te-gadget-icon {
+  background-image: url('../../images/glogo.png') !important; /* Path to the custom icon. */
+  background-size: contain !important; /* Ensures the icon fits within the element. */
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  width: 38px !important;
+  height: 38px !important;
+}

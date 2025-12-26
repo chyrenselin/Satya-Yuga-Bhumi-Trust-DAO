@@ -1,0 +1,40 @@
+/* --- Header Styles for the Vishwadharm Granth Page --- */
+
+/* Selects the header element, using the accessibility role for added specificity. */
+header[role="banner"] {
+  /* A dark, rich brown gradient for a sophisticated and earthy feel. */
+  background: linear-gradient(135deg, #6D4C41, #8B4513);
+  color: #F5DEB3; /* A warm, wheat-like color for the text, ensuring good contrast. */
+  
+  /* Responsive padding: minimum 1.5rem, scales with 4% of viewport width, maximum 2.5rem. */
+  padding: clamp(1.5rem, 4vw, 2.5rem) 1rem;
+  
+  text-align: center; /* Centers the title text. */
+  
+  /* Responsive font size for the main title. */
+  font-size: clamp(2rem, 3vw, 3.5rem);
+  font-weight: 700;
+  
+  /* A multi-layered text shadow to create a glowing, slightly 3D effect. */
+  text-shadow:
+    1px 1px 2px rgba(0,0,0,0.7),      /* A sharp, dark shadow for depth and separation from the background. */
+    0 0 8px rgba(255, 215, 0, 0.5),   /* A soft golden glow. */
+    0 0 15px rgba(244, 164, 96, 0.3); /* A wider, subtle warm aura (using a SandyBrown color). */
+  
+  /* A very dark, thick bottom border to ground the header. */
+  border-bottom: 5px solid #311B0B;
+  /* A drop shadow below the entire header to lift it off the page. */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  
+  /* Responsive margin at the bottom to create space between the header and the content below. */
+  margin-bottom: clamp(1.8rem, 5vh, 3.5rem);
+  
+  letter-spacing: 1.5px; /* Adds a bit of spacing between letters for a more epic feel. */
+  
+  /* Applies a simple fade-in animation when the page loads. */
+  animation: fadeIn 1s ease-out;
+  
+  /* Establishes a stacking context to ensure z-index is effective. */
+  position: relative;
+  z-index: 1; /* Ensures the header is above any background pseudo-elements on the body. */
+}

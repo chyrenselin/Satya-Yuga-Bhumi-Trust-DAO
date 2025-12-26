@@ -1,0 +1,56 @@
+/* --- SVG Logo Animation and Styling --- */
+
+.site-logo-svg {
+    overflow: visible;
+}
+
+/* Base styles for the logo's primary SVG groups. */
+.lotus-petals,
+.seed-of-life {
+    transform-origin: 50% 50%;
+    transition: all 0.5s ease-in-out;
+}
+
+/* Defines the "breathing" animation for the lotus petals. */
+@keyframes lotusBreathe {
+    0%, 100% {
+        transform: scale(0.98);
+        opacity: 0.85;
+    }
+    50% {
+        transform: scale(1.02);
+        opacity: 1;
+    }
+}
+
+.lotus-petals {
+    animation: lotusBreathe 8s ease-in-out infinite;
+}
+
+/* Defines the slow, continuous rotation for the Seed of Life pattern. */
+@keyframes slowSpin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.seed-of-life {
+    opacity: 0.7;
+    animation: slowSpin 60s linear infinite;
+}
+
+/* --- Hover Effects --- */
+.site-logo-svg:hover .lotus-petals {
+    animation-play-state: paused;
+    transform: scale(1.05); /* Pauses animation and enlarges the element on hover. */
+    opacity: 1;
+}
+
+.site-logo-svg:hover .seed-of-life {
+    animation-play-state: paused;
+    stroke: var(--color-accent-primary-glow); /* Pauses animation and intensifies the glow effect on hover. */
+    opacity: 1;
+}

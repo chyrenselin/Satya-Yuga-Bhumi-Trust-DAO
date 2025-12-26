@@ -1,0 +1,117 @@
+/* =======================================================
+   MOBILE & RESPONSIVE OPTIMIZATIONS
+   This file contains all the style overrides for different screen sizes,
+   ensuring the layout is functional and readable on desktops, tablets, and mobile phones.
+   ======================================================= */
+
+/* --- Desktop Specific (Overrides Grid for Large Screens) --- */
+/* This media query applies styles only when the screen width is 1024px or wider. */
+@media (min-width: 1024px) {
+    /* On large screens, this forces the pillars grid into a fixed 4-column layout,
+       overriding the 'auto-fit' behavior from layout.css to ensure consistency. */
+    .pillars-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+   
+/* --- Tablet & Smaller (up to 768px) --- */
+/* This media query applies styles for screens that are 768px wide or less. */
+@media (max-width: 768px) {
+    /* Reduces container padding to give content more room on smaller screens. */
+    .main-container { padding: 1.25rem; }
+    
+    /* Hero Section Adjustments */
+    .hero-section {
+        min-height: auto; /* Removes the minimum height. */
+        padding-top: 6rem; /* Adjusts top padding. */
+        padding-bottom: 3rem;
+    }
+    .main-title { font-size: 3.5rem; /* Reduces the main title font size. */ }
+    
+    /* Reduces the top margin for various sections to tighten up the layout. */
+    .trust-section, .invocation-section, .cta-container { margin-top: 4rem; }
+    .section-header { margin-bottom: 3rem; }
+    .section-title { font-size: 1.2rem; }
+    
+    /* Grid Adjustments for smaller screens. */
+    /* Forces both grids into a single-column layout. */
+    .philosophy-grid {
+        gap: 2rem;
+        grid-template-columns: 1fr;
+    }
+    .pillars-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Reduces padding inside the cards. */
+    .card-link-wrapper { padding: 1.5rem; }
+    .pillar-card { padding: 2rem 1rem; }
+    
+    /* Typography adjustments for the Invocation section. */
+    .unveiling-title { font-size: 2.5rem; margin-bottom: 2rem; }
+    .invocation-body { font-size: 1.1rem; text-align: justify; } /* Justifies text for better readability on tablets. */
+    .mantra { font-size: 1.8rem; margin-top: 2rem; }
+    
+    /* Pledge Modal Adjustments. */
+    .pledge-container {
+        padding: 1.5rem;
+        width: 95%; /* Makes the modal slightly wider relative to the screen. */
+    }
+    .cosmic-input { padding: 0.8rem; font-size: 0.9rem; }
+    h2 { font-size: 1.8rem; }
+    .pledge-sub { font-size: 0.9rem; }
+
+    /* Adjusts the close button on the pledge modal to be smaller and positioned differently for mobile. */
+    #close-pledge-btn {
+        top: 1rem;
+        right: 1rem;
+        width: 3rem;
+        height: 3rem;
+        font-size: 1.5rem;
+    }
+
+    /* Mobile Adjustments for the structure of the Invocation Section. */
+    .invocation-section { padding: 3rem 1rem; margin-top: 4rem; }
+    /* Changes the highlighted verse's border from being on the left to being on the top and bottom. */
+    .highlight-verse {
+        text-align: center;
+        border-left: none;
+        border-top: 1px solid rgba(255, 215, 0, 0.3);
+        border-bottom: 1px solid rgba(255, 215, 0, 0.3);
+        padding: 2rem 0;
+        margin: 2rem auto;
+    }
+    
+    /* Further typography adjustments for the invocation verses. */
+    .verse {
+        font-size: 1.3rem; 
+        margin-bottom: 2rem;
+    }
+    .mantra { margin-top: 3rem; }
+}
+
+/* --- Mobile Phones (up to 480px) --- */
+/* This media query targets small screens, typically mobile phones in portrait mode. */
+@media (max-width: 480px) {
+    /* Stacks the translation button and widget vertically and makes them full-width. */
+    .translate-pair { flex-direction: column; width: 100%; gap: 0.5rem; }
+    /* Makes the glass button full-width and adjusts its font size and padding. */
+    .glass-btn { width: 100%; font-size: 0.8rem; padding: 0.6rem; }
+    
+    /* Reduces padding and font sizes even further for very small screens. */
+    .main-container { padding: 1rem; }
+    .main-title { font-size: 2.8rem; }
+    .hero-text { font-size: 1rem; }
+
+    .unveiling-title { font-size: 2rem; }
+    
+    .section-subtitle-gold { font-size: 1.8rem; }
+    .pillar-card h3, .philosophy-card h3 { font-size: 1.3rem; }
+    
+    /* Makes the main CTA button full-width on small screens. */
+    .glow-on-hover {
+        padding: 0.8rem 1.5rem;
+        font-size: 1.1rem;
+        width: 100%;
+    }
+}

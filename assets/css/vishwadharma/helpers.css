@@ -1,0 +1,17 @@
+/* --- Helper / Utility Classes --- */
+
+/* 
+  Hides an element visually while keeping it accessible to screen readers.
+  This is a standard accessibility practice for providing context to assistive technologies
+  that isn't needed for visual users (e.g., descriptions for audio elements).
+*/
+.visually-hidden {
+  position: absolute; /* Takes the element out of the normal document flow. */
+  width: 1px; /* Shrinks the element to a tiny, invisible box. */
+  height: 1px;
+  margin: -1px; /* Prevents the 1px box from taking up any space. */
+  padding: 0;
+  overflow: hidden; /* Hides any content that overflows the 1x1px box. */
+  clip: rect(0, 0, 0, 0); /* A deprecated but widely supported method for hiding content. */
+  border: 0; /* Removes any border. */
+}

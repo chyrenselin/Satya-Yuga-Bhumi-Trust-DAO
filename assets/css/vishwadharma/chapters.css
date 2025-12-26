@@ -1,0 +1,150 @@
+/* --- Chapters Section Styles --- */
+
+/* Styles for the main container of all chapters. */
+section#chapters {
+  padding-top: clamp(1.5rem, 3.5vh, 2.5rem); /* Adds responsive padding at the top. */
+  /* Applies a fade-in animation with a 0.6s delay. */
+  animation: fadeIn 1s ease-out 0.6s backwards;
+}
+
+/* Styles for the main heading "ग्रंथ के अध्याय". */
+.chapters-heading {
+  text-align: center;
+  font-size: clamp(1.6rem, 3vw, 2.2rem); /* Responsive font size. */
+  color: rgba(0,0,0,0.4); /* A semi-transparent dark color. */
+  margin-bottom: clamp(2.2rem, 5.5vh, 3.2rem);
+  font-weight: 700;
+  /* A complex text shadow to give a slightly embossed, glowing look. */
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.4), 0 0 5px rgba(218, 165, 32, 0.4);
+  position: relative;
+}
+/* Creates a decorative underline for the main chapters heading. */
+.chapters-heading::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #DAA520; /* Goldenrod color. */
+    margin: 8px auto 0; /* Centers the underline below the text. */
+}
+
+/* Styles for a single chapter container. */
+.chapter {
+  background-color: #b89b45; /* A dark, earthy gold. */
+  border-left: 7px solid #8B4513; /* A thick, brown left border. */
+  margin-bottom: clamp(1.8rem, 3.5vh, 2.8rem);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* A subtle shadow for depth. */
+  transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+  border-radius: 10px;
+  overflow: hidden; /* Hides any content that might overflow the rounded corners. */
+}
+
+/* Hover and Active states for a chapter. 'active' class is added by JavaScript. */
+.chapter:hover, .chapter.active {
+  transform: translateY(-4px); /* Lifts the card slightly. */
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2); /* Enhances the shadow. */
+  background-color: #ffecb3; /* Changes background to a lighter, parchment color. */
+  border-left-color: #C04000; /* Changes the border color to a vibrant red-orange. */
+}
+
+/* Styles for the clickable chapter title (h2). */
+.chapter h2 {
+  margin: 0;
+  padding: clamp(1.1rem, 2.8vh, 1.6rem) clamp(1.3rem, 3.2vw, 1.9rem);
+  font-size: clamp(1.35rem, 3.2vw, 1.85rem);
+  color: #4A3B32;
+  background-color: rgba(218, 165, 32, 0.12); /* A very transparent gold background. */
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between; /* Pushes the title text and the icon to opposite ends. */
+  align-items: center;
+  user-select: none; /* Prevents the user from accidentally selecting the title text when clicking. */
+  text-shadow: 1px 1px 1px rgba(255,255,255,0.6);
+  cursor: pointer;
+  border-bottom: 1px solid rgba(109, 76, 65, 0.15); /* A subtle bottom border. */
+}
+
+/* Styles for the chapter title when the chapter is active. */
+.chapter.active h2 {
+  color: #C04000; /* Changes text color to match the active border color. */
+  background-color: rgba(218, 165, 32, 0.22); /* Makes the background slightly more opaque. */
+}
+
+/* Creates the bullet point '•' icon on the right of the chapter title. */
+.chapter h2::after {
+  content: '•';
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  transition: transform 0.3s ease; /* Prepares for a potential transform animation. */
+  color: #795548;
+}
+
+/* Styles for the icon when the chapter is active. */
+.chapter.active h2::after {
+  content: '•'; /* Content remains the same. */
+  color: #C04000; /* Changes color to match the active text color. */
+}
+
+/* The content panel of the chapter, hidden by default. */
+.chapter .content {
+  padding: clamp(1.3rem, 3.2vw, 2.1rem);
+  display: none;
+  font-size: clamp(1rem, 1.7vw, 1.12rem);
+  color: #5D4037; /* A dark, earthy brown for the text. */
+  line-height: 1.85;
+}
+
+/* When the chapter is active, the content becomes visible with a fade-in animation. */
+.chapter.active .content {
+  display: block;
+  animation: fadeIn 0.5s ease;
+}
+
+/* Basic styling for lists within the chapter content. */
+.chapter .content ul, .chapter .content ol {
+  padding-left: 2.2em;
+  margin-bottom: 1.3em;
+}
+.chapter .content ul li, .chapter .content ol li {
+  margin-bottom: 0.65em;
+}
+
+/* --- Special Styles for Chapter 9 (Navgeeta) --- */
+/* Targets the italicized paragraphs (the shlokas) within Chapter 9. */
+#content-chapter-9 p em {
+  display: block;
+  font-family: 'Noto Serif Devanagari', 'Philosopher', serif;
+  font-size: clamp(1.15em, 2.1vw, 1.35em);
+  color: #8B0000; /* A deep red color. */
+  font-style: italic;
+  margin-bottom: 0.35em;
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* Targets paragraphs that do NOT contain an 'em' tag (the translations) within Chapter 9. */
+#content-chapter-9 p:not(:has(em)) {
+  font-size: clamp(0.95em, 1.9vw, 1.1em);
+  color: #5D4037;
+  font-style: normal;
+  margin-bottom: 1.1em;
+  text-align: center;
+}
+
+/* Style for the horizontal rule used as a separator in the chapter text. */
+hr.content-separator {
+  margin: 1.5rem 0;
+}
+
+/* --- General Section Tag Styling (Potentially Overly Broad) --- */
+/* This rule targets ALL <section> tags on the page. */
+section {
+  background: transparent;
+  padding: 3rem 0;
+  margin: 0 auto;
+  /* Adds a dashed border at the bottom of every section. */
+  border-bottom: 1px dashed rgba(62, 39, 35, 0.2);
+}
+/* This removes the bottom border from the very last section on the page. */
+section:last-of-type {
+  border-bottom: none;
+}

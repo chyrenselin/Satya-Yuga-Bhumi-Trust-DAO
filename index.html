@@ -1,0 +1,181 @@
+<!-- Sets the document type to HTML5, the latest standard for web documents. -->
+<!DOCTYPE html>
+<!-- The root element of the HTML page, with the language attribute set to English ("en"). -->
+<html lang="en">
+<head>
+    <!-- Specifies the character encoding for the document to be UTF-8, which supports a wide range of characters. -->
+    <meta charset="UTF-8">
+    <!-- Configures the viewport to ensure the page is responsive and scales correctly on all devices. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- The title of the document, displayed in the browser's title bar or tab. -->
+    <title>Satya Yuga Bhumi Trust (DAO) - Home</title>
+    <!-- Canonical URL to prevent duplicate content issues for search engines. -->
+    <link rel="canonical" href="https://chyrenselin.github.io/Satya-Yuga-Bhumi-Trust-DAO/">
+    <meta name="description" content="A blueprint for a new paradigm where land is held in a community trust, governed by a non-monetary DAO based on selfless service (Seva).">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://chyrenselin.github.io/Satya-Yuga-Bhumi-Trust-DAO/">
+    <meta property="og:title" content="Satya Yuga Bhumi Trust (DAO) - A World Reimagined">
+    <meta property="og:description" content="A blueprint for a new paradigm where land is held in a community trust, governed by a non-monetary DAO based on selfless service (Seva).">
+    <meta property="og:image" content="https://chyrenselin.github.io/Satya-Yuga-Bhumi-Trust-DAO/assets/images/favicon/favicon-1200x630.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://chyrenselin.github.io/Satya-Yuga-Bhumi-Trust-DAO/">
+    <meta property="twitter:title" content="Satya Yuga Bhumi Trust (DAO) - A World Reimagined">
+    <meta property="twitter:description" content="A blueprint for a new paradigm where land is held in a community trust, governed by a non-monetary DAO based on selfless service (Seva).">
+    <meta property="twitter:image" content="https://chyrenselin.github.io/Satya-Yuga-Bhumi-Trust-DAO/assets/images/favicon/favicon-1200x630.png">
+
+    
+    <!-- Favicon and App Icon Links -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon/favicon.ico">
+
+    <!-- Links to external CSS stylesheets for styling the page. -->
+    <link rel="stylesheet" href="assets/css/root/root.css">
+    <link rel="stylesheet" href="assets/css/common/animations.css">
+    <link rel="stylesheet" href="assets/css/common/google_translate_common.css">
+    <link rel="stylesheet" href="assets/css/root/google_translate.css">
+    <link rel="stylesheet" href="assets/css/root/responsive.css">
+    <link rel="stylesheet" href="assets/css/root/buttons.css">
+    <!-- Links to the Web App Manifest file, providing information for progressive web apps (PWAs). -->
+    <link rel="manifest" href="manifest.json">
+    <!-- Inline script for registering a service worker for offline capabilities. -->
+    <script>
+      // Checks if the serviceWorker API is available in the browser.
+      if ('serviceWorker' in navigator) {
+        // Adds an event listener to run the registration code after the page has finished loading.
+        window.addEventListener('load', () => {
+          // Registers the service worker file located at 'sw.js'.
+          navigator.serviceWorker.register('sw.js')
+            // This 'then' block is executed if the registration is successful.
+            .then(registration => {
+              // Logs a success message to the browser console with the scope of the registration.
+              console.log('Service Worker registered successfully with scope:', registration.scope);
+            })
+            // This 'catch' block is executed if the registration fails.
+            .catch(error => {
+              // Logs an error message to the browser console.
+              console.error('Service Worker registration failed:', error);
+            });
+        });
+      }
+    </script>
+    <!-- JSON-LD Schema for defining the Organization to search engines -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Satya Yuga Bhumi Trust (DAO)",
+      "url": "https://chyrenselin.github.io/Satya-Yuga-Bhumi-Trust-DAO/",
+      "description": "A decentralized autonomous organization dedicated to transparent and equitable stewardship of land, based on the principles of Vishwa Dharma and the Vishwa Samvidhan.",
+      "logo": "https://chyrenselin.github.io/Satya-Yuga-Bhumi-Trust-DAO/assets/images/favicon/android-chrome-512x512.png"
+    }
+    </script>
+</head>
+<body>
+
+    <!-- The main content area of the page. -->
+    <main>
+        <!-- A container to centralize and manage the layout of the page content. -->
+        <div class="content-container">
+            <!-- Container for the Google Translate button and music player controls. -->
+            <div id="translator-container">
+              <!-- A pair container for the translation button and the widget itself. -->
+              <div class="translate-pair">
+                <!-- Button to initialize the Google Translate widget. -->
+                <button id="translateBtn" class="translate-button" aria-live="polite" aria-expanded="false" aria-controls="google_translate_element">
+                  <span class="emoji-pulse">😮</span>Experience in your mother tongue<span class="emoji-spin">🌍</span>
+                </button>
+                <!-- The element where the Google Translate widget will be rendered, initially hidden. -->
+                <div id="google_translate_element" class="google-translate-hidden"></div>
+              </div>
+              <!-- A group of buttons for controlling the background music. -->
+              <div class="button-group" style="margin-top: 1rem; text-align: center;">
+                  <!-- Button to start the music, initially hidden as autoplay is attempted. -->
+                  <button type="button" class="sacred-journey-btn" id="startJourneyBtn" style="display: none;" aria-label="Embark on a sacred journey and start background music">
+                    Embark on a Sacred Journey <span class="emoji-pulse">✨</span>
+                  </button>
+                  <!-- Button to stop the music. -->
+                  <button type="button" class="sacred-journey-btn" id="stopMusicBtn" aria-label="Stop background music">
+                    <span class="emoji-pulse">🎵</span> Stop Music
+                  </button>
+              </div>
+            </div>
+
+            <!-- Section containing the main welcome message of the homepage. -->
+            <section class="welcome-section">
+                <!-- The main heading of the page. -->
+                <h1 class="page-title">Welcome to the Future of Governance</h1>
+                <!-- A paragraph providing a brief introduction to the DAO. -->
+                <p>Explore the core tenets of the Satya Yuga Bhumi Trust (DAO), a decentralized autonomous organization dedicated to transparent and equitable stewardship.</p>
+            </section>
+
+            <!-- A grid of navigation cards that link to the main sections of the website. -->
+            <section class="nav-card-grid">
+                <!-- Each 'a' tag is a clickable card. -->
+                <!-- Card linking to the Bhumi Trust page. -->
+                <a href="bhumi-trust/bhumi-trust.html" class="nav-card">
+                    <h3>Bhumi Trust</h3>
+                    <p>Discover the foundational principles of the Bhumi Trust.</p>
+                </a>
+                <!-- Card linking to the Vishwa Dharma page. -->
+                <a href="vishwadharma/vishwadharma.html" class="nav-card">
+                    <h3>Vishwa Dharma</h3>
+                    <p>Explore the universal principles of righteous conduct.</p>
+                </a>
+                <!-- Card linking to the Vishwa Samvidhan (Universal Constitution) page. -->
+                <a href="vishwasamvidhan/vishwasamvidhan.html" class="nav-card">
+                    <h3>Vishwa Samvidhan</h3>
+                    <p>Read the universal constitution for all beings.</p>
+                </a>
+                <!-- Card linking to a page explaining how the DAO functions. -->
+                <a href="how-dao-works/how-it-works.html" class="nav-card">
+                    <h3>How the DAO Works</h3>
+                    <p>Understand the mechanics and governance of our DAO.</p>
+                </a>
+                <!-- Card linking to the participation page. -->
+                <a href="participate/participate.html" class="nav-card">
+                    <h3>Participate</h3>
+                    <p>Learn how you can contribute and be a part of the change.</p>
+                </a>
+                <!-- Card linking to the Frequently Asked Questions (FAQ) page. -->
+                <a href="faq/faq.html" class="nav-card">
+                    <h3>FAQ</h3>
+                    <p>Find answers to frequently asked questions.</p>
+                </a>
+            </section>
+        </div>
+    </main>
+
+    <!-- The footer section of the site. -->
+    <footer class="site-footer">
+        <!-- Copyright information. -->
+        <p>&copy; Satya Yuga Bhumi Trust (DAO).</p>
+    </footer>
+
+    <!-- HTML5 audio element for playing background music. -->
+    <!-- 'loop' attribute makes the audio repeat. 'preload="metadata"' suggests the browser load only metadata initially. 'autoplay' attempts to play the audio on page load. -->
+    <audio id="indexAudio" loop preload="metadata" autoplay>
+      <!-- The source of the audio file. -->
+      <source src="assets/audio/homepage-slow-trumpet.mp3" type="audio/mpeg">
+      <!-- Fallback text displayed if the browser does not support the audio element. -->
+      Your browser does not support the audio element.
+    </audio>
+
+    <!-- Links to external JavaScript files. 'defer' attribute ensures they are executed after the document has been parsed. -->
+    <script src="assets/js/root/main.js" defer></script>
+    <script src="assets/js/root/google-translate.js" defer></script>
+    <script src="assets/js/common/music-player.js" defer></script>
+    <!-- Inline script for controlling the music player on this specific page. -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        // The new setupMusicPlayer function now handles all autoplay and UI logic internally.
+        setupMusicPlayer('indexAudio');
+      });
+    </script>
+</body>
+</html>
